@@ -50,9 +50,94 @@
     "numero": 6,
     "texto": "Sector",
     "puntuable": false,
-    "ayuda": "⚠ PENDIENTE: confirmar con Colsubsidio el listado completo de la clasificación CIIU (sección económica y división) a usar. Ejemplo real registrado: 'ACTIVIDADES FINANCIERAS Y DE SEGUROS; Actividades de servicios financieros, excepto las de seguros y de pensiones'.",
-    "tipo": "texto",
-    "pendiente": true
+    "tipo": "multiselect",
+    "pendiente": false,
+    "opciones": [
+      {
+        "valor": "agricultura_ganaderia_caza_sil",
+        "etiqueta": "AGRICULTURA, GANADERÍA, CAZA, SILVICULTURA Y PESCA"
+      },
+      {
+        "valor": "explotacion_de_minas_y_cantera",
+        "etiqueta": "EXPLOTACIÓN DE MINAS Y CANTERAS"
+      },
+      {
+        "valor": "industrias_manufactureras",
+        "etiqueta": "INDUSTRIAS MANUFACTURERAS"
+      },
+      {
+        "valor": "suministro_de_electricidad_gas",
+        "etiqueta": "SUMINISTRO DE ELECTRICIDAD, GAS, VAPOR Y AIRE ACONDICIONADO"
+      },
+      {
+        "valor": "distribucion_de_agua_evacuacio",
+        "etiqueta": "DISTRIBUCIÓN DE AGUA; EVACUACIÓN Y TRATAMIENTO DE AGUAS RESIDUALES, GESTIÓN DE DESECHOS Y ACTIVIDADES DE SANEAMIENTO AMBIENTAL"
+      },
+      {
+        "valor": "construccion",
+        "etiqueta": "CONSTRUCCIÓN"
+      },
+      {
+        "valor": "comercio_al_por_mayor_y_al_por",
+        "etiqueta": "COMERCIO AL POR MAYOR Y AL POR MENOR; REPARACIÓN DE VEHÍCULOS AUTOMOTORES Y MOTOCICLETAS"
+      },
+      {
+        "valor": "transporte_y_almacenamiento",
+        "etiqueta": "TRANSPORTE Y ALMACENAMIENTO"
+      },
+      {
+        "valor": "alojamiento_y_servicios_de_com",
+        "etiqueta": "ALOJAMIENTO Y SERVICIOS DE COMIDA"
+      },
+      {
+        "valor": "informacion_y_comunicaciones",
+        "etiqueta": "INFORMACIÓN Y COMUNICACIONES"
+      },
+      {
+        "valor": "actividades_financieras_y_de_s",
+        "etiqueta": "ACTIVIDADES FINANCIERAS Y DE SEGUROS"
+      },
+      {
+        "valor": "actividades_inmobiliarias",
+        "etiqueta": "ACTIVIDADES INMOBILIARIAS"
+      },
+      {
+        "valor": "actividades_profesionales_cien",
+        "etiqueta": "ACTIVIDADES PROFESIONALES, CIENTÍFICAS Y TÉCNICAS"
+      },
+      {
+        "valor": "actividades_de_servicios_admin",
+        "etiqueta": "ACTIVIDADES DE SERVICIOS ADMINISTRATIVOS Y DE APOYO"
+      },
+      {
+        "valor": "administracion_publica_y_defen",
+        "etiqueta": "ADMINISTRACIÓN PÚBLICA Y DEFENSA; PLANES DE SEGURIDAD SOCIAL DE AFILIACIÓN OBLIGATORIA"
+      },
+      {
+        "valor": "educacion",
+        "etiqueta": "EDUCACIÓN"
+      },
+      {
+        "valor": "actividades_de_atencion_de_la",
+        "etiqueta": "ACTIVIDADES DE ATENCIÓN DE LA SALUD HUMANA Y DE ASISTENCIA SOCIAL"
+      },
+      {
+        "valor": "actividades_artisticas_de_entr",
+        "etiqueta": "ACTIVIDADES ARTÍSTICAS, DE ENTRETENIMIENTO Y RECREACIÓN"
+      },
+      {
+        "valor": "otras_actividades_de_servicios",
+        "etiqueta": "OTRAS ACTIVIDADES DE SERVICIOS"
+      },
+      {
+        "valor": "actividades_de_los_hogares_ind",
+        "etiqueta": "ACTIVIDADES DE LOS HOGARES INDIVIDUALES EN CALIDAD DE EMPLEADORES; ACTIVIDADES NO DIFERENCIADAS DE LOS HOGARES INDIVIDUALES COMO PRODUCTORES DE BIENES Y SERVICIOS PARA USO PROPIO"
+      },
+      {
+        "valor": "actividades_de_organizaciones",
+        "etiqueta": "ACTIVIDADES DE ORGANIZACIONES Y ENTIDADES EXTRATERRITORIALES"
+      }
+    ]
   },
   {
     "id": "EjeA_cuantas_personas_empleadas_trabajan_en_t",
@@ -100,9 +185,8 @@
     "numero": 9,
     "texto": "País o países en los que tienen operaciones",
     "puntuable": false,
-    "ayuda": "Países de América Latina y el Caribe + Regiones: ALM, Europa, Asia, América del Norte, África, Operaciones Globales",
     "tipo": "texto",
-    "pendiente": true
+    "pendiente": false
   },
   {
     "id": "EjeA_cuenta_con_area_de_talento_humano",

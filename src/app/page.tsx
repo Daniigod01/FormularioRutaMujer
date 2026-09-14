@@ -73,7 +73,7 @@ export default function Home() {
       {/* Barra superior */}
       <div className="flex items-center justify-between bg-[var(--color-oscuro)] px-6 py-3 text-white">
         <span className="font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-          Sección: Form
+          Sección: {paso === "intro" ? "Bienvenida" : paso === "enviado" ? "Confirmación" : "Form"}
         </span>
         <div className="flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -126,29 +126,79 @@ export default function Home() {
 
       {/* Intro */}
       {paso === "intro" && (
-        <main className="mx-auto max-w-2xl px-6 py-16">
-          <h2 className="mb-4 font-[family-name:var(--font-display)] text-2xl text-[var(--color-oscuro)]">
-            Diagnóstico de gestión inclusiva y con perspectiva de género
-          </h2>
-          <p className="mb-4 text-sm leading-relaxed text-[var(--color-grafito)]/80">
-            Esta herramienta recopila información institucional y organizacional de su empresa,
-            con el objetivo de elaborar un diagnóstico sobre prácticas, políticas y procesos
-            relacionados con la igualdad de género y la inclusión laboral.
-          </p>
-          <p className="mb-4 text-sm leading-relaxed text-[var(--color-grafito)]/80">
-            No se solicitan datos personales de personas naturales — por favor absténgase de
-            incluir información personal en las respuestas abiertas.
-          </p>
-          <p className="mb-8 text-sm leading-relaxed text-[var(--color-grafito)]/80">
-            El diagnóstico está dividido en 5 secciones y toma aproximadamente 20-25 minutos.
-          </p>
-          <button
-            onClick={irSiguiente}
-            className="rounded-full bg-[var(--color-oscuro)] px-6 py-3 text-sm font-medium text-white hover:opacity-90"
-          >
-            Comenzar diagnóstico →
-          </button>
-        </main>
+        <div>
+          {/* Banda amarilla con la cuadrícula y el título */}
+          <div className="bg-[var(--color-acento)] px-6 py-10 text-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/grid-bienvenida.png"
+              alt=""
+              className="mx-auto mb-6 h-44 w-44 rounded-md border border-black/10"
+            />
+            <h1 className="mx-auto max-w-2xl font-[family-name:var(--font-display)] text-2xl font-bold italic text-[var(--color-oscuro)] md:text-3xl">
+              Diagnóstico de Igualdad de Género
+              <br />y gestión inclusiva del talento
+            </h1>
+          </div>
+
+          {/* Sección oscura con el texto del programa */}
+          <div className="bg-[var(--color-oscuro)] px-6 py-14 text-white">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="mb-6 font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--color-acento)]">
+                Programa Ruta Mujer — Colsubsidio
+              </h2>
+              <div className="space-y-4 text-sm leading-relaxed text-white/85">
+                <p>
+                  Te damos la bienvenida al diagnóstico empresarial de la iniciativa{" "}
+                  <strong className="text-white">Ruta Mujer</strong>, un programa liderado por{" "}
+                  <strong className="text-white">Colsubsidio</strong>, en alianza con{" "}
+                  <strong className="text-white">Pro Mujer</strong> y la{" "}
+                  <strong className="text-white">Fundación Colombia Incluyente</strong>, que busca
+                  fortalecer la inclusión laboral y el acceso al empleo de las mujeres a través del
+                  trabajo conjunto con las empresas.
+                </p>
+                <p>
+                  Este diagnóstico forma parte de un proceso integral orientado a acompañar a las
+                  organizaciones en el fortalecimiento de sus prácticas de gestión del talento y su
+                  cultura organizacional desde un enfoque de igualdad de género e inclusión. Desde
+                  Pro Mujer, llevaremos adelante el proceso de fortalecimiento empresarial,
+                  brindando acompañamiento técnico y herramientas para la implementación de
+                  mejoras.
+                </p>
+                <p>El instrumento permite conocer el estado actual de la empresa en dos dimensiones principales:</p>
+                <ul className="list-disc space-y-1 pl-6">
+                  <li>Gestión del talento inclusivo y con perspectiva de género</li>
+                  <li>Gestión empresarial con perspectiva de género</li>
+                </ul>
+                <p>
+                  Adicionalmente, incluye algunas secciones de carácter informativo que buscan
+                  comprender el contexto organizacional, las oportunidades de empleo y los
+                  principales desafíos para la inclusión laboral.
+                </p>
+                <p>
+                  El objetivo de este diagnóstico es conocer la situación actual de su empresa e
+                  identificar retos y áreas de oportunidad que servirán como base para definir
+                  acciones concretas y estrategias a la medida. Más que una evaluación, este
+                  instrumento busca comprender la realidad organizacional, reconocer las prácticas
+                  existentes y generar información útil para orientar el trabajo conjunto hacia una
+                  cultura organizacional más igualitaria e inclusiva.
+                </p>
+              </div>
+
+              <p className="mt-8 text-center font-[family-name:var(--font-display)] text-lg font-semibold text-[var(--color-acento)]">
+                Súmese a Ruta Mujer y sea parte del cambio
+              </p>
+              <div className="mt-6 text-center">
+                <button
+                  onClick={irSiguiente}
+                  className="rounded-full bg-[var(--color-acento)] px-8 py-3 text-sm font-bold uppercase tracking-wide text-[var(--color-acento-texto)] hover:opacity-90"
+                >
+                  Iniciar diagnóstico →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
 
       {/* Pasos con eje: sidebar oscuro + contenido */}
