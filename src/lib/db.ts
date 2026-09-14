@@ -4,8 +4,20 @@ import type { ResultadoEje } from "./puntaje";
 
 // Cadena de conexión: Supabase (u otro Postgres estándar conectado por
 // Vercel Marketplace) expone POSTGRES_URL o POSTGRES_URL_NON_POOLING.
+// Le quitamos cualquier "sslmode" que traiga incluido en la URL, porque
+// si no, node-postgres ignora la configuración de SSL que le pasamos
+// aparte y termina fallando con "self-signed certificate in certificate chain".
 function cadenaConexion(): string | undefined {
-  return process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING || process.env.DATABASE_URL;
+  const cruda =
+    process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING || process.env.DATABASE_URL;
+  if (!cruda) return undefined;
+  try {
+    const url = new URL(cruda);
+    url.searchParams.delete("sslmode");
+    return url.toString();
+  } catch {
+    return cruda;
+  }
 }
 
 function bdConfigurada() {
