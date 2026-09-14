@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  /* Paleta del formulario (carbón + amarillo + rosa) */
+  --color-oscuro: #2b2b2a;
+  --color-acento: #f2c230;
+  --color-acento-texto: #2b2b2a;
+  --color-boton: #d6597a;
+  --color-grafito: #2b2b2b;
+  --color-blanco: #ffffff;
+  --color-paper: #ffffff;
+  --color-line: #e5e5e3;
+
+  --font-display: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-grafito);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-acento);
+  color: var(--color-acento-texto);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-boton);
+  outline-offset: 2px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  accent-color: var(--color-oscuro);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,2114 @@
+[
+  {
+    "id": "EjeA_nombre_de_la_organizacion",
+    "eje": "A",
+    "numero": 1,
+    "texto": "Nombre de la organización",
+    "puntuable": false,
+    "ayuda": "",
+    "tipo": "texto"
+  },
+  {
+    "id": "EjeA_razon_social",
+    "eje": "A",
+    "numero": 2,
+    "texto": "Razón Social",
+    "puntuable": false,
+    "ayuda": "",
+    "tipo": "texto"
+  },
+  {
+    "id": "EjeA_nit",
+    "eje": "A",
+    "numero": 3,
+    "texto": "NIT",
+    "puntuable": false,
+    "ayuda": "",
+    "tipo": "texto"
+  },
+  {
+    "id": "EjeA_nombre_de_la_persona_que_responde",
+    "eje": "A",
+    "numero": 4,
+    "texto": "Nombre de la persona que responde",
+    "puntuable": false,
+    "ayuda": "",
+    "tipo": "texto"
+  },
+  {
+    "id": "EjeA_cargo_de_la_persona_que_responde",
+    "eje": "A",
+    "numero": 5,
+    "texto": "Cargo de la persona que responde",
+    "puntuable": false,
+    "ayuda": "",
+    "tipo": "texto"
+  },
+  {
+    "id": "EjeA_sector",
+    "eje": "A",
+    "numero": 6,
+    "texto": "Sector",
+    "puntuable": false,
+    "ayuda": "⚠ PENDIENTE: confirmar con Colsubsidio el listado completo de la clasificación CIIU (sección económica y división) a usar. Ejemplo real registrado: 'ACTIVIDADES FINANCIERAS Y DE SEGUROS; Actividades de servicios financieros, excepto las de seguros y de pensiones'.",
+    "tipo": "texto",
+    "pendiente": true
+  },
+  {
+    "id": "EjeA_cuantas_personas_empleadas_trabajan_en_t",
+    "eje": "A",
+    "numero": 7,
+    "texto": "¿Cuántas personas empleadas trabajan en tu organización?",
+    "puntuable": false,
+    "ayuda": "1 a 10 | 11 a 50 | 51 a 200 | 201 a 500 | Más de 500",
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "1_a_10",
+        "etiqueta": "1 a 10"
+      },
+      {
+        "valor": "11_a_50",
+        "etiqueta": "11 a 50"
+      },
+      {
+        "valor": "51_a_200",
+        "etiqueta": "51 a 200"
+      },
+      {
+        "valor": "201_a_500",
+        "etiqueta": "201 a 500"
+      },
+      {
+        "valor": "mas_de_500",
+        "etiqueta": "Más de 500"
+      }
+    ]
+  },
+  {
+    "id": "EjeA_cual_es_el_porcentaje_aproximado_de_muje",
+    "eje": "A",
+    "numero": 8,
+    "texto": "¿Cuál es el porcentaje aproximado de mujeres y hombres que trabajan actualmente en la organización?",
+    "puntuable": false,
+    "ayuda": "Respuesta libre, ej. '60% mujeres / 40% hombres'",
+    "tipo": "texto"
+  },
+  {
+    "id": "EjeA_pais_o_paises_en_los_que_tienen_operacio",
+    "eje": "A",
+    "numero": 9,
+    "texto": "País o países en los que tienen operaciones",
+    "puntuable": false,
+    "ayuda": "Países de América Latina y el Caribe + Regiones: ALM, Europa, Asia, América del Norte, África, Operaciones Globales",
+    "tipo": "texto",
+    "pendiente": true
+  },
+  {
+    "id": "EjeA_cuenta_con_area_de_talento_humano",
+    "eje": "A",
+    "numero": 10,
+    "texto": "¿Cuenta con área de Talento Humano?",
+    "puntuable": false,
+    "ayuda": "Sí | No",
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "si",
+        "etiqueta": "Sí"
+      },
+      {
+        "valor": "no",
+        "etiqueta": "No"
+      }
+    ]
+  },
+  {
+    "id": "EjeB_tiene_vacantes_activas_actualmente",
+    "eje": "B",
+    "numero": 1,
+    "texto": "¿Tiene vacantes activas actualmente?",
+    "puntuable": false,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "si",
+        "etiqueta": "Sí"
+      },
+      {
+        "valor": "no",
+        "etiqueta": "No"
+      }
+    ]
+  },
+  {
+    "id": "EjeB_tiene_vacantes_activas_con_la_agencia_de",
+    "eje": "B",
+    "numero": 2,
+    "texto": "¿Tiene vacantes activas con la agencia de Empleo de Colsubsidio?",
+    "puntuable": false,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "si",
+        "etiqueta": "Sí"
+      },
+      {
+        "valor": "no",
+        "etiqueta": "No"
+      }
+    ]
+  },
+  {
+    "id": "EjeB_cuantas_vacantes_aproximadas_proyecta_ab",
+    "eje": "B",
+    "numero": 3,
+    "texto": "¿Cuántas vacantes aproximadas proyecta abrir en los próximos 3 meses?",
+    "puntuable": false,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "1_a_10",
+        "etiqueta": "1 a 10"
+      },
+      {
+        "valor": "11_a_49",
+        "etiqueta": "11 a 49"
+      },
+      {
+        "valor": "50_a_100",
+        "etiqueta": "50 a 100"
+      },
+      {
+        "valor": "101_a_300",
+        "etiqueta": "101 a 300"
+      },
+      {
+        "valor": "mas_de_300",
+        "etiqueta": "Más de 300"
+      }
+    ]
+  },
+  {
+    "id": "EjeB_cual_es_la_modalidad_de_vinculacion_labo",
+    "eje": "B",
+    "numero": 4,
+    "texto": "¿Cuál es la modalidad de vinculación laboral predominante en su empresa?",
+    "puntuable": false,
+    "tipo": "multiselect",
+    "opciones": [
+      {
+        "valor": "contrato_a_termino_indefinido",
+        "etiqueta": "Contrato a término indefinido"
+      },
+      {
+        "valor": "contrato_a_termino_fijo",
+        "etiqueta": "Contrato a término fijo"
+      },
+      {
+        "valor": "contrato_por_obra_o_labor",
+        "etiqueta": "Contrato por obra o labor"
+      },
+      {
+        "valor": "prestacion_de_servicios_honora",
+        "etiqueta": "Prestación de servicios / honorarios"
+      },
+      {
+        "valor": "contratacion_temporal_o_a_trav",
+        "etiqueta": "Contratación temporal o a través de terceros (outsourcing/temporales)"
+      },
+      {
+        "valor": "modalidad_mixta_sin_predominan",
+        "etiqueta": "Modalidad mixta (sin predominancia clara)"
+      },
+      {
+        "valor": "otra_especifique",
+        "etiqueta": "Otra (especifique)"
+      }
+    ]
+  },
+  {
+    "id": "EjeB_que_tipo_de_perfiles_son_los_mas_demanda",
+    "eje": "B",
+    "numero": 5,
+    "texto": "¿Qué tipo de perfiles son los más demandados actualmente en su empresa?",
+    "puntuable": false,
+    "tipo": "multiselect",
+    "opciones": [
+      {
+        "valor": "operativos",
+        "etiqueta": "Operativos"
+      },
+      {
+        "valor": "comerciales",
+        "etiqueta": "Comerciales"
+      },
+      {
+        "valor": "administrativos",
+        "etiqueta": "Administrativos"
+      },
+      {
+        "valor": "tecnicos_o_tecnologos",
+        "etiqueta": "Técnicos o tecnólogos"
+      },
+      {
+        "valor": "profesionales",
+        "etiqueta": "Profesionales"
+      },
+      {
+        "valor": "directivos_o_estrategicos",
+        "etiqueta": "Directivos o estratégicos"
+      }
+    ]
+  },
+  {
+    "id": "EjeB_modalidad_de_trabajo_predominante_en_las",
+    "eje": "B",
+    "numero": 6,
+    "texto": "Modalidad de trabajo predominante en las vacantes actuales",
+    "puntuable": false,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "presencial",
+        "etiqueta": "Presencial"
+      },
+      {
+        "valor": "remoto_100_virtual",
+        "etiqueta": "Remoto (100% virtual)"
+      },
+      {
+        "valor": "hibrido",
+        "etiqueta": "Híbrido"
+      },
+      {
+        "valor": "modalidad_variable_segun_el_ca",
+        "etiqueta": "Modalidad variable según el cargo"
+      }
+    ]
+  },
+  {
+    "id": "EjeB_la_organizacion_tiene_disposicion_para_a",
+    "eje": "B",
+    "numero": 7,
+    "texto": "¿La organización tiene disposición para ajustar requisitos del perfil con el fin de facilitar la inclusión laboral?",
+    "puntuable": false,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "si_de_manera_abierta",
+        "etiqueta": "Sí, de manera abierta"
+      },
+      {
+        "valor": "si_bajo_ciertas_condiciones",
+        "etiqueta": "Sí, bajo ciertas condiciones"
+      },
+      {
+        "valor": "depende_del_tipo_de_cargo",
+        "etiqueta": "Depende del tipo de cargo"
+      },
+      {
+        "valor": "no",
+        "etiqueta": "No"
+      }
+    ]
+  },
+  {
+    "id": "EjeB_que_aspectos_estaria_la_organizacion_dis",
+    "eje": "B",
+    "numero": 8,
+    "texto": "¿Qué aspectos estaría la organización dispuesta a flexibilizar para facilitar procesos de inclusión laboral?",
+    "puntuable": false,
+    "tipo": "multiselect",
+    "opciones": [
+      {
+        "valor": "anos_de_experiencia_requeridos",
+        "etiqueta": "Años de experiencia requeridos"
+      },
+      {
+        "valor": "formacion_academica_minima",
+        "etiqueta": "Formación académica mínima"
+      },
+      {
+        "valor": "modalidad_laboral",
+        "etiqueta": "Modalidad laboral"
+      },
+      {
+        "valor": "horarios_laborales",
+        "etiqueta": "Horarios laborales"
+      },
+      {
+        "valor": "certificaciones_especificas",
+        "etiqueta": "Certificaciones específicas"
+      },
+      {
+        "valor": "diseno_o_funciones_del_cargo",
+        "etiqueta": "Diseño o funciones del cargo"
+      },
+      {
+        "valor": "ninguno",
+        "etiqueta": "Ninguno"
+      },
+      {
+        "valor": "otra_especifique",
+        "etiqueta": "Otra (especifique)"
+      }
+    ],
+    "condicion": {
+      "dependeDe": "EjeB_la_organizacion_tiene_disposicion_para_a",
+      "mostrarSiNoEs": "No"
+    }
+  },
+  {
+    "id": "EjeC_grupos_poblacionales",
+    "eje": "C",
+    "numero": "1",
+    "tipo": "matriz",
+    "texto": "¿En los últimos 24 meses, su empresa ha contratado personas pertenecientes a alguno de los siguientes grupos poblacionales?",
+    "puntuable": false,
+    "filasMatriz": [
+      {
+        "id": "EjeC_grupo_mujeres_cabeza_de_hogar",
+        "etiqueta": "Mujeres cabeza de hogar"
+      },
+      {
+        "id": "EjeC_grupo_jovenes_sin_experiencia_l",
+        "etiqueta": "Jóvenes sin experiencia laboral previa"
+      },
+      {
+        "id": "EjeC_grupo_personas_mayores_de_45_an",
+        "etiqueta": "Personas mayores de 45 años"
+      },
+      {
+        "id": "EjeC_grupo_personas_con_discapacidad",
+        "etiqueta": "Personas con discapacidad"
+      },
+      {
+        "id": "EjeC_grupo_victimas_del_conflicto_ar",
+        "etiqueta": "Víctimas del conflicto armado"
+      },
+      {
+        "id": "EjeC_grupo_personas_migrantes",
+        "etiqueta": "Personas migrantes"
+      },
+      {
+        "id": "EjeC_grupo_personas_lgbtiq",
+        "etiqueta": "Personas LGBTIQ+"
+      },
+      {
+        "id": "EjeC_grupo_mujeres_cuidadoras",
+        "etiqueta": "Mujeres cuidadoras"
+      },
+      {
+        "id": "EjeC_grupo_otras_tipificaciones_de_m",
+        "etiqueta": "Otras tipificaciones de mujeres"
+      }
+    ],
+    "opcionesMatriz": [
+      {
+        "valor": "Si",
+        "etiqueta": "Sí"
+      },
+      {
+        "valor": "No",
+        "etiqueta": "No"
+      },
+      {
+        "valor": "NoSabe",
+        "etiqueta": "No sabe / No registra"
+      }
+    ]
+  },
+  {
+    "id": "EjeC_desde_su_experiencia_cuales_son_las_prin",
+    "eje": "C",
+    "numero": 2,
+    "texto": "Desde su experiencia, ¿cuáles son las principales dificultades que identifica en las personas al momento de contratar? (máx. 3)",
+    "tipo": "multiselect",
+    "puntuable": false,
+    "opciones": [
+      {
+        "valor": "falta_de_experiencia_laboral",
+        "etiqueta": "Falta de experiencia laboral"
+      },
+      {
+        "valor": "brechas_en_cualificacion_tecni",
+        "etiqueta": "Brechas en cualificación técnica"
+      },
+      {
+        "valor": "habilidades_socioemocionales_i",
+        "etiqueta": "Habilidades socioemocionales insuficientes"
+      },
+      {
+        "valor": "expectativas_salariales_no_ali",
+        "etiqueta": "Expectativas salariales no alineadas"
+      },
+      {
+        "valor": "limitaciones_de_disponibilidad",
+        "etiqueta": "Limitaciones de disponibilidad horaria"
+      },
+      {
+        "valor": "ubicacion_geograficatransporte",
+        "etiqueta": "Ubicación geográfica/transporte"
+      },
+      {
+        "valor": "alta_rotacion_previa",
+        "etiqueta": "Alta rotación previa"
+      },
+      {
+        "valor": "desconocimiento_del_sectorrol",
+        "etiqueta": "Desconocimiento del sector/rol"
+      },
+      {
+        "valor": "percepcion_de_baja_productivid",
+        "etiqueta": "Percepción de baja productividad"
+      },
+      {
+        "valor": "falta_de_match_culturalinterge",
+        "etiqueta": "Falta de match cultural/intergeneracional"
+      },
+      {
+        "valor": "no_identifica_barreras",
+        "etiqueta": "No identifica barreras"
+      },
+      {
+        "valor": "otra_especifique",
+        "etiqueta": "Otra (especifique)"
+      }
+    ]
+  },
+  {
+    "id": "EjeC_cuales_de_los_siguientes_requisitos_suel",
+    "eje": "C",
+    "numero": 3,
+    "texto": "¿Cuál(es) de los siguientes requisitos suelen reducir el número de candidatos/as elegibles? (máx. 3)",
+    "tipo": "multiselect",
+    "puntuable": false,
+    "opciones": [
+      {
+        "valor": "nivel_educativo_minimo_exigido",
+        "etiqueta": "Nivel educativo mínimo exigido"
+      },
+      {
+        "valor": "anos_o_tipo_de_experiencia_esp",
+        "etiqueta": "Años o tipo de experiencia específica"
+      },
+      {
+        "valor": "disponibilidad_para_horarios_e",
+        "etiqueta": "Disponibilidad para horarios extendidos/rotativos"
+      },
+      {
+        "valor": "pruebas_tecnicas_especializada",
+        "etiqueta": "Pruebas técnicas especializadas"
+      },
+      {
+        "valor": "ubicacion_del_puesto",
+        "etiqueta": "Ubicación del puesto"
+      },
+      {
+        "valor": "disponibilidad_inmediata",
+        "etiqueta": "Disponibilidad inmediata"
+      },
+      {
+        "valor": "edad_u_otros_criterios_sociode",
+        "etiqueta": "Edad u otros criterios sociodemográficos"
+      },
+      {
+        "valor": "otra_especifique",
+        "etiqueta": "Otra (especifique)"
+      }
+    ]
+  },
+  {
+    "id": "EjeC_que_factores_internos_de_la_empresa_pued",
+    "eje": "C",
+    "numero": 4,
+    "texto": "¿Qué factores internos de la empresa pueden dificultar la contratación? (máx. 3)",
+    "tipo": "multiselect",
+    "puntuable": false,
+    "opciones": [
+      {
+        "valor": "procesos_de_seleccion_largosco",
+        "etiqueta": "Procesos de selección largos/complejos"
+      },
+      {
+        "valor": "perfiles_con_requisitos_restri",
+        "etiqueta": "Perfiles con requisitos restrictivos"
+      },
+      {
+        "valor": "falta_de_adaptacion_del_puesto",
+        "etiqueta": "Falta de adaptación del puesto"
+      },
+      {
+        "valor": "cultura_organizacional_poco_in",
+        "etiqueta": "Cultura organizacional poco inclusiva"
+      },
+      {
+        "valor": "sesgos_en_entrevistasevaluacio",
+        "etiqueta": "Sesgos en entrevistas/evaluaciones"
+      },
+      {
+        "valor": "desconocimiento_de_incentivosn",
+        "etiqueta": "Desconocimiento de incentivos/normatividad"
+      },
+      {
+        "valor": "otra_especifique",
+        "etiqueta": "Otra (especifique)"
+      }
+    ]
+  },
+  {
+    "id": "EjeC_en_procesos_recientes_en_cuales_etapas_h",
+    "eje": "C",
+    "numero": 5,
+    "texto": "En procesos recientes, ¿en cuáles etapas ha presentado mayores desafíos para la contratación y permanencia del talento? (máx. 3)",
+    "tipo": "multiselect",
+    "puntuable": false,
+    "opciones": [
+      {
+        "valor": "postulacion",
+        "etiqueta": "Postulación"
+      },
+      {
+        "valor": "filtro_inicial_de_hojas_de_vid",
+        "etiqueta": "Filtro inicial de hojas de vida"
+      },
+      {
+        "valor": "entrevista",
+        "etiqueta": "Entrevista"
+      },
+      {
+        "valor": "pruebas_tecnicas",
+        "etiqueta": "Pruebas técnicas"
+      },
+      {
+        "valor": "ajuste_cultural",
+        "etiqueta": "Ajuste cultural"
+      },
+      {
+        "valor": "negociacion_salarial",
+        "etiqueta": "Negociación salarial"
+      },
+      {
+        "valor": "permanencia_en_periodo_de_prue",
+        "etiqueta": "Permanencia en periodo de prueba"
+      },
+      {
+        "valor": "no_se_presentan_dificultades",
+        "etiqueta": "No se presentan dificultades"
+      },
+      {
+        "valor": "otra_especifique",
+        "etiqueta": "Otra (especifique)"
+      }
+    ]
+  },
+  {
+    "id": "EjeC_segun_su_experiencia_que_factores_influy",
+    "eje": "C",
+    "numero": 6,
+    "texto": "Según su experiencia, ¿qué factores influyen más en la desvinculación temprana del personal? (todas las que apliquen)",
+    "tipo": "multiselect",
+    "puntuable": false,
+    "opciones": [
+      {
+        "valor": "horarios_laborales",
+        "etiqueta": "Horarios laborales"
+      },
+      {
+        "valor": "responsabilidades_de_cuidado_f",
+        "etiqueta": "Responsabilidades de cuidado familiar"
+      },
+      {
+        "valor": "transportedistancia",
+        "etiqueta": "Transporte/distancia"
+      },
+      {
+        "valor": "clima_laboral",
+        "etiqueta": "Clima laboral"
+      },
+      {
+        "valor": "salariocondiciones_economicas",
+        "etiqueta": "Salario/condiciones económicas"
+      },
+      {
+        "valor": "liderazgojefatura_directa",
+        "etiqueta": "Liderazgo/jefatura directa"
+      },
+      {
+        "valor": "falta_de_conciliacion_vida_per",
+        "etiqueta": "Falta de conciliación vida personal-laboral"
+      },
+      {
+        "valor": "otra_especifique",
+        "etiqueta": "Otra (especifique)"
+      }
+    ]
+  },
+  {
+    "id": "Eje1_la_empresa_tiene_experiencia_contratando_1",
+    "eje": "1",
+    "bloque": "Inclusión laboral y apertura organizacional",
+    "numero": 1,
+    "texto": "¿La empresa tiene experiencia contratando población diversa o en situación de vulnerabilidad?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / No hay registro",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera aislada o puntual",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera sostenida o mediante iniciativas concretas",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_cuales_2",
+    "eje": "1",
+    "bloque": "Inclusión laboral y apertura organizacional",
+    "numero": 2,
+    "texto": "¿Cuál/es?",
+    "puntuable": false,
+    "tipo": "texto",
+    "condicion": {
+      "dependeDe": "Eje1_la_empresa_tiene_experiencia_contratando_1",
+      "mostrarSi": [
+        "B",
+        "C"
+      ]
+    }
+  },
+  {
+    "id": "Eje1_la_organizacion_cuenta_con_programas_cup_3",
+    "eje": "1",
+    "bloque": "Inclusión laboral y apertura organizacional",
+    "numero": 3,
+    "texto": "¿La organización cuenta con programas, cupos o iniciativas orientadas a la inclusión laboral?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, acciones puntuales o en desarrollo",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, iniciativas o programas definidos",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_cuales_4",
+    "eje": "1",
+    "bloque": "Inclusión laboral y apertura organizacional",
+    "numero": 4,
+    "texto": "¿Cuál/es?",
+    "puntuable": false,
+    "tipo": "texto",
+    "condicion": {
+      "dependeDe": "Eje1_la_organizacion_cuenta_con_programas_cup_3",
+      "mostrarSi": [
+        "B",
+        "C"
+      ]
+    }
+  },
+  {
+    "id": "Eje1_se_realizan_acciones_para_promover_un_pr_5",
+    "eje": "1",
+    "bloque": "Proceso de reclutamiento y contratación",
+    "numero": 5,
+    "texto": "¿Se realizan acciones para promover un proceso de reclutamiento y contratación libre de discriminación y sesgos?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, acciones puntuales o aisladas",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existe un proceso o política claramente definida",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_adjuntar_documento_6",
+    "eje": "1",
+    "bloque": "Proceso de reclutamiento y contratación",
+    "numero": 6,
+    "texto": "Adjuntar documento",
+    "puntuable": false,
+    "tipo": "archivo",
+    "condicion": {
+      "dependeDe": "Eje1_se_realizan_acciones_para_promover_un_pr_5",
+      "mostrarSi": [
+        "C"
+      ]
+    }
+  },
+  {
+    "id": "Eje1_el_proceso_de_reclutamiento_y_contrataci_7",
+    "eje": "1",
+    "bloque": "Proceso de reclutamiento y contratación",
+    "numero": 7,
+    "texto": "¿El proceso de reclutamiento y contratación se monitorea periódicamente para identificar sesgos y ajustar?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera ocasional o informal",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera periódica o sistemática",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_los_lineamientos_de_reclutamiento_y_cont_8",
+    "eje": "1",
+    "bloque": "Proceso de reclutamiento y contratación",
+    "numero": 8,
+    "texto": "¿Los lineamientos de reclutamiento y contratación se difunden al equipo?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No o no aplica",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, parcialmente o a algunas áreas",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera clara y general",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_se_capacita_a_todo_el_personal_que_parti_9",
+    "eje": "1",
+    "bloque": "Proceso de reclutamiento y contratación",
+    "numero": 9,
+    "texto": "¿Se capacita a todo el personal que participa en el proceso de reclutamiento y contratación en sesgos inconscientes y discriminación?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, capacitaciones puntuales o no periódicas",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, capacitaciones periódicas o programas definidos",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_los_perfiles_de_puestos_diferencian_clar_10",
+    "eje": "1",
+    "bloque": "Diseño de perfiles y vacantes",
+    "numero": 10,
+    "texto": "¿Los perfiles de puestos diferencian claramente requisitos esenciales y deseables?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, en algunos casos o de manera parcial",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera clara y sistemática",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_se_revisan_requisitos_no_imprescindibles_11",
+    "eje": "1",
+    "bloque": "Diseño de perfiles y vacantes",
+    "numero": 11,
+    "texto": "¿Se revisan requisitos no imprescindibles (fuerza física, presentación, disponibilidad irrestricta, etc.)?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera ocasional o informal",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera regular o con criterios definidos",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_las_ofertas_laborales_utilizan_lenguaje_12",
+    "eje": "1",
+    "bloque": "Diseño de perfiles y vacantes",
+    "numero": 12,
+    "texto": "¿Las ofertas laborales utilizan lenguaje neutro y no excluyente?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / no se revisa",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, en algunos casos",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera consistente",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_las_vacantes_incluyen_informacion_transp_13",
+    "eje": "1",
+    "bloque": "Diseño de perfiles y vacantes",
+    "numero": 13,
+    "texto": "¿Las vacantes incluyen información transparente sobre condiciones laborales?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, en algunos casos",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, se incluye información clara y completa",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_las_vacantes_incluyen_informacion_transp_14",
+    "eje": "1",
+    "bloque": "Diseño de perfiles y vacantes",
+    "numero": 14,
+    "texto": "¿Las vacantes incluyen información transparente sobre bandas salariales?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, en algunos casos",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, se incluye información clara y completa",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_la_organizacion_promueve_la_contratacion_15",
+    "eje": "1",
+    "bloque": "Diseño de perfiles y vacantes",
+    "numero": 15,
+    "texto": "¿La organización promueve la contratación de mujeres en áreas/roles donde están subrepresentadas?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera puntual o sin acciones definidas",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, mediante acciones o iniciativas concretas",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_las_entrevistas_de_seleccion_cuentan_con_16",
+    "eje": "1",
+    "bloque": "Evaluación y selección",
+    "numero": 16,
+    "texto": "¿Las entrevistas de selección cuentan con preguntas estructuradas para todas las personas candidatas?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, en algunos casos o parcial",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera consistente con criterios definidos",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_se_analiza_la_proporcion_de_mujeres_post_17",
+    "eje": "1",
+    "bloque": "Evaluación y selección",
+    "numero": 17,
+    "texto": "¿Se analiza la proporción de mujeres postuladas vs. preseleccionadas por vacante?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera ocasional o informal",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera periódica o con seguimiento definido",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_se_analiza_la_proporcion_de_mujeres_y_ho_18",
+    "eje": "1",
+    "bloque": "Evaluación y selección",
+    "numero": 18,
+    "texto": "¿Se analiza la proporción de mujeres y hombres contratados en los procesos de selección?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera ocasional o informal",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera periódica o con seguimiento definido",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_se_realizan_acciones_para_promover_proce_19",
+    "eje": "1",
+    "bloque": "Desarrollo, promoción y crecimiento",
+    "numero": 19,
+    "texto": "¿Se realizan acciones para promover procesos de promoción/ascenso libres de discriminación y sesgos?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas acciones puntuales",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existe una política o proceso definido",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_la_politica_o_criterios_de_promocion_y_a_20",
+    "eje": "1",
+    "bloque": "Desarrollo, promoción y crecimiento",
+    "numero": 20,
+    "texto": "¿La política o criterios de promoción y ascenso se comunican a los equipos?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No, no se comunican o no están definidos",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, parcialmente o a algunas áreas",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera clara y general",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_ofrece_formacionfortalecimiento_de_capac_21",
+    "eje": "1",
+    "bloque": "Desarrollo, promoción y crecimiento",
+    "numero": 21,
+    "texto": "¿Ofrece formación/fortalecimiento de capacidades y analiza participación por género?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas oportunidades o análisis parcial",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera regular y analiza participación por género",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_cuenta_con_un_proceso_formal_de_induccio_22",
+    "eje": "1",
+    "bloque": "Incorporación y condiciones laborales",
+    "numero": 22,
+    "texto": "¿Cuenta con un proceso formal de inducción para nuevas personas?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / va modificándose según cada ingreso",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera informal o parcial",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existe un proceso formal definido",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_se_comunican_de_manera_clara_y_transpare_23",
+    "eje": "1",
+    "bloque": "Incorporación y condiciones laborales",
+    "numero": 23,
+    "texto": "¿Se comunican de manera clara y transparente las condiciones laborales y beneficios?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No, no se comunican de manera clara o sistemática",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, se comunica parcialmente",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, se comunica de manera clara y sistematizada",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_ofrece_condiciones_que_faciliten_la_part_24",
+    "eje": "1",
+    "bloque": "Incorporación y condiciones laborales",
+    "numero": 24,
+    "texto": "¿Ofrece condiciones que faciliten la participación de mujeres/personas con responsabilidades de cuidado?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas medidas puntuales",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existen medidas definidas o políticas claras",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_existe_igualdad_salarial_para_puestos_eq_25",
+    "eje": "1",
+    "bloque": "Incorporación y condiciones laborales",
+    "numero": 25,
+    "texto": "¿Existe igualdad salarial para puestos equivalentes dentro de la organización?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / sin información al respecto",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, parcialmente o sin mecanismos claros",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existe igualdad salarial con criterios definidos",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_cuales_26",
+    "eje": "1",
+    "bloque": "Incorporación y condiciones laborales",
+    "numero": 26,
+    "texto": "¿Cuál/es?",
+    "puntuable": false,
+    "tipo": "texto",
+    "condicion": {
+      "dependeDe": "Eje1_existe_igualdad_salarial_para_puestos_eq_25",
+      "mostrarSi": [
+        "B",
+        "C"
+      ]
+    }
+  },
+  {
+    "id": "Eje1_se_realizan_encuestas_de_clima_laboral_o_27",
+    "eje": "1",
+    "bloque": "Retención, clima y permanencia laboral",
+    "numero": 27,
+    "texto": "¿Se realizan encuestas de clima laboral o satisfacción del personal?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No, no se realizan",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera ocasional",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera periódica o con proceso definido",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_se_analizan_los_resultados_considerando_28",
+    "eje": "1",
+    "bloque": "Retención, clima y permanencia laboral",
+    "numero": 28,
+    "texto": "¿Se analizan los resultados considerando diferencias por género u otras características de diversidad?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, parcialmente",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera sistemática considerando género u otras características",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_se_realizan_entrevistasencuesta_de_salid_29",
+    "eje": "1",
+    "bloque": "Retención, clima y permanencia laboral",
+    "numero": 29,
+    "texto": "¿Se realizan entrevistas/encuesta de salida o retiro a las personas que dejan la organización?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No, no se realizan",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, en algunos casos",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera regular o con proceso definido",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_las_entrevistasencuesta_de_salida_incluy_30",
+    "eje": "1",
+    "bloque": "Retención, clima y permanencia laboral",
+    "numero": 30,
+    "texto": "¿Las entrevistas/encuesta de salida incluyen preguntas sobre igualdad, discriminación o ambiente laboral?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No, no incluyen estos temas",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera parcial",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera sistemática",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_se_implementan_medidas_cuando_se_identif_31",
+    "eje": "1",
+    "bloque": "Retención, clima y permanencia laboral",
+    "numero": 31,
+    "texto": "¿Se implementan medidas cuando se identifican brechas o problemáticas de igualdad de género o inclusión?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No, no se implementan acciones específicas",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas acciones puntuales",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, acciones definidas o con seguimiento",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_se_realiza_seguimiento_de_la_integracion_32",
+    "eje": "1",
+    "bloque": "Retención, clima y permanencia laboral",
+    "numero": 32,
+    "texto": "¿Se realiza seguimiento de la integración y permanencia de las personas durante los primeros 3 meses de contratación?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No, no se realiza seguimiento",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera informal o en algunos casos",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera sistemática o con proceso definido",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje1_como_de_que_manera_33",
+    "eje": "1",
+    "bloque": "Retención, clima y permanencia laboral",
+    "numero": 33,
+    "texto": "¿Cómo? ¿De qué manera?",
+    "puntuable": false,
+    "tipo": "texto",
+    "condicion": {
+      "dependeDe": "Eje1_se_realiza_seguimiento_de_la_integracion_32",
+      "mostrarSi": [
+        "B",
+        "C"
+      ]
+    }
+  },
+  {
+    "id": "Eje2_en_la_organizacion_se_realizan_acciones_1",
+    "eje": "2",
+    "bloque": "Compromiso institucional y gobernanza",
+    "numero": 1,
+    "texto": "¿En la organización se realizan acciones a favor de la igualdad de género?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / de manera aislada",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas acciones puntuales",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existe una política o estrategia para la igualdad de género",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_cuales_2",
+    "eje": "2",
+    "bloque": "Compromiso institucional y gobernanza",
+    "numero": 2,
+    "texto": "¿Cuál/es?",
+    "puntuable": false,
+    "tipo": "texto",
+    "condicion": {
+      "dependeDe": "Eje2_en_la_organizacion_se_realizan_acciones_1",
+      "mostrarSi": [
+        "B",
+        "C"
+      ]
+    }
+  },
+  {
+    "id": "Eje2_se_cuenta_con_recursos_o_presupuesto_asi_3",
+    "eje": "2",
+    "bloque": "Compromiso institucional y gobernanza",
+    "numero": 3,
+    "texto": "¿Se cuenta con recursos o presupuesto asignado para implementar acciones de igualdad de género?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No, no se cuenta con recursos",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera puntual o limitada",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existe presupuesto o recursos definidos",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_se_capacita_al_personal_en_materia_de_ig_4",
+    "eje": "2",
+    "bloque": "Compromiso institucional y gobernanza",
+    "numero": 4,
+    "texto": "¿Se capacita al personal en materia de igualdad de género?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / capacitaciones aisladas y no obligatorias",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera puntual",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera periódica, obligatoria o con programa definido",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_la_organizacion_esta_adherida_o_comprome_5",
+    "eje": "2",
+    "bloque": "Compromiso institucional y gobernanza",
+    "numero": 5,
+    "texto": "¿La organización está adherida o comprometida con estándares/iniciativas nacionales o internacionales de igualdad de género (ej. WEPs)?",
+    "puntuable": false,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "no_no_esta_adherida_ni_partici",
+        "etiqueta": "No, no está adherida ni participa"
+      },
+      {
+        "valor": "si_participa_de_forma_informal",
+        "etiqueta": "Sí, participa de forma informal o lo está considerando"
+      },
+      {
+        "valor": "si_esta_adherida_o_comprometid",
+        "etiqueta": "Sí, está adherida o comprometida formalmente"
+      }
+    ]
+  },
+  {
+    "id": "Eje2_existe_una_persona_area_o_comite_respons_6",
+    "eje": "2",
+    "bloque": "Compromiso institucional y gobernanza",
+    "numero": 6,
+    "texto": "¿Existe una persona, área o comité responsable de promover la igualdad de género o inclusión?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / va cambiando según la iniciativa",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera parcial o informal",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, formalmente designado",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_se_realiza_seguimiento_o_evaluacion_de_l_7",
+    "eje": "2",
+    "bloque": "Compromiso institucional y gobernanza",
+    "numero": 7,
+    "texto": "¿Se realiza seguimiento o evaluación de las acciones implementadas en materia de igualdad de género?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No, no se realiza",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera ocasional o informal",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera periódica o con proceso definido",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_cuenta_con_condicionesinfraestructura_pa_8",
+    "eje": "2",
+    "bloque": "Infraestructura",
+    "numero": 8,
+    "texto": "¿Cuenta con condiciones/infraestructura para un ambiente laboral inclusivo y de bienestar (espacios de lactancia, baños, etc.)?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / solo de manera informal",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas condiciones o medidas parciales",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, condiciones/infraestructura como parte de una política organizacional",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_se_realizan_acciones_para_promover_comun_9",
+    "eje": "2",
+    "bloque": "Comunicación inclusiva",
+    "numero": 9,
+    "texto": "¿Se realizan acciones para promover comunicación interna/externa que fomente la igualdad de género y evite estereotipos?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / solo de forma aislada",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas acciones puntuales",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existe una política o estrategia que orienta la comunicación",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_se_realizan_acciones_para_prevenir_y_ate_10",
+    "eje": "2",
+    "bloque": "Prevención de violencia, acoso y discriminación laboral",
+    "numero": 10,
+    "texto": "¿Se realizan acciones para prevenir y atender la discriminación y violencia en el espacio laboral, incluyendo violencia sexual?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / solo de forma aislada",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas acciones puntuales",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, acciones definidas con protocolo o política",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_cuenta_con_canales_oficiales_para_report_11",
+    "eje": "2",
+    "bloque": "Prevención de violencia, acoso y discriminación laboral",
+    "numero": 11,
+    "texto": "¿Cuenta con canales oficiales para reportar situaciones de discriminación o violencia laboral?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, existen pero no claramente definidos/difundidos",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, canales oficiales definidos y conocidos por el personal",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_se_realizan_acciones_para_favorecer_el_e_12",
+    "eje": "2",
+    "bloque": "Conciliación, corresponsabilidad y flexibilidad laboral",
+    "numero": 12,
+    "texto": "¿Se realizan acciones para favorecer el equilibrio entre vida laboral y personal?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / no se realizan acciones específicas",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas acciones puntuales",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, acciones o medidas definidas implementadas regularmente",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_cuales_13",
+    "eje": "2",
+    "bloque": "Conciliación, corresponsabilidad y flexibilidad laboral",
+    "numero": 13,
+    "texto": "¿Cuál/es?",
+    "puntuable": false,
+    "tipo": "texto",
+    "condicion": {
+      "dependeDe": "Eje2_se_realizan_acciones_para_favorecer_el_e_12",
+      "mostrarSi": [
+        "B",
+        "C"
+      ]
+    }
+  },
+  {
+    "id": "Eje2_cuenta_con_politicas_o_medidas_de_flexib_14",
+    "eje": "2",
+    "bloque": "Conciliación, corresponsabilidad y flexibilidad laboral",
+    "numero": 14,
+    "texto": "¿Cuenta con políticas o medidas de flexibilidad laboral en términos de horarios?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / de manera informal según cada jefe/a",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas medidas o en ciertas áreas",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, políticas o medidas formales para toda la organización",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_cuales_15",
+    "eje": "2",
+    "bloque": "Conciliación, corresponsabilidad y flexibilidad laboral",
+    "numero": 15,
+    "texto": "¿Cuál/es?",
+    "puntuable": false,
+    "tipo": "texto",
+    "condicion": {
+      "dependeDe": "Eje2_cuenta_con_politicas_o_medidas_de_flexib_14",
+      "mostrarSi": [
+        "B",
+        "C"
+      ]
+    }
+  },
+  {
+    "id": "Eje2_implementa_modalidades_de_teletrabajo_o_16",
+    "eje": "2",
+    "bloque": "Conciliación, corresponsabilidad y flexibilidad laboral",
+    "numero": 16,
+    "texto": "¿Implementa modalidades de teletrabajo o trabajo híbrido cuando es posible?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / solo casos puntuales o informales",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, en algunas áreas o situaciones",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, modalidades definidas cuando el puesto lo permite",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_las_politicas_de_flexibilidad_laboral_y_17",
+    "eje": "2",
+    "bloque": "Conciliación, corresponsabilidad y flexibilidad laboral",
+    "numero": 17,
+    "texto": "¿Las políticas de flexibilidad laboral y teletrabajo se comunican al equipo?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / se conocen de manera informal",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, parcialmente o en algunas áreas",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, forman parte de una política comunicada a todos los equipos",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_se_brindan_dias_adicionales_de_vacacione_18",
+    "eje": "2",
+    "bloque": "Conciliación, corresponsabilidad y flexibilidad laboral",
+    "numero": 18,
+    "texto": "¿Se brindan días adicionales de vacaciones por encima de lo establecido por la ley?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / solo de manera informal",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, en algunos casos",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existe un beneficio definido aplicable al personal",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_se_brindan_permisos_o_licencias_por_enfe_19",
+    "eje": "2",
+    "bloque": "Conciliación, corresponsabilidad y flexibilidad laboral",
+    "numero": 19,
+    "texto": "¿Se brindan permisos o licencias por enfermedad/salud mental por encima de lo establecido por la ley?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / solo de manera informal",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, en algunos casos",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existe un beneficio definido aplicable al personal",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_se_brindan_permisos_o_licencias_adiciona_20",
+    "eje": "2",
+    "bloque": "Conciliación, corresponsabilidad y flexibilidad laboral",
+    "numero": 20,
+    "texto": "¿Se brindan permisos o licencias adicionales de maternidad y paternidad?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / solo de manera informal",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, en algunos casos",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, existe un beneficio definido aplicable al personal",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_recolecta_informacion_de_la_composicion_21",
+    "eje": "2",
+    "bloque": "Información, participación y liderazgo",
+    "numero": 21,
+    "texto": "¿Recolecta información de la composición del equipo desagregada por género?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / sin sistematizar",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, parcialmente o de manera ocasional",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera sistemática con registros e indicadores definidos",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_cual_es_el_porcentaje_aproximado_de_muje_22",
+    "eje": "2",
+    "bloque": "Información, participación y liderazgo",
+    "numero": 22,
+    "texto": "¿Cuál es el porcentaje aproximado de mujeres en cargos de liderazgo o toma de decisiones?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "Menos del 30%",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Entre 30-39% o entre 61-70%",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Entre 40-60%",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_se_realizan_acciones_para_promover_que_l_23",
+    "eje": "2",
+    "bloque": "Información, participación y liderazgo",
+    "numero": 23,
+    "texto": "¿Se realizan acciones para promover que las mujeres ocupen cargos de liderazgo y toma de decisiones?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, algunas acciones puntuales",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, acciones o iniciativas definidas implementadas regularmente",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_cuales_24",
+    "eje": "2",
+    "bloque": "Información, participación y liderazgo",
+    "numero": 24,
+    "texto": "¿Cuáles?",
+    "puntuable": false,
+    "tipo": "texto",
+    "condicion": {
+      "dependeDe": "Eje2_se_realizan_acciones_para_promover_que_l_23",
+      "mostrarSi": [
+        "B",
+        "C"
+      ]
+    }
+  },
+  {
+    "id": "Eje2_utiliza_la_informacion_desagregada_por_g_25",
+    "eje": "2",
+    "bloque": "Información, participación y liderazgo",
+    "numero": 25,
+    "texto": "¿Utiliza la información desagregada por género para tomar decisiones o mejorar políticas/prácticas internas?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / no se utiliza o no está disponible",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera ocasional o parcial",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera sistemática para toma de decisiones o mejoras",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_se_identifican_yo_miden_brechas_salarial_26",
+    "eje": "2",
+    "bloque": "Información, participación y liderazgo",
+    "numero": 26,
+    "texto": "¿Se identifican y/o miden brechas salariales entre mujeres y hombres?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / no se mide o no está disponible",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, de manera ocasional o parcial",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, de manera periódica o con método definido",
+        "puntos": 2
+      }
+    ]
+  },
+  {
+    "id": "Eje2_cuenta_con_escalas_salariales_definidas_27",
+    "eje": "2",
+    "bloque": "Información, participación y liderazgo",
+    "numero": 27,
+    "texto": "¿Cuenta con escalas salariales definidas por rango o puesto?",
+    "puntuable": true,
+    "tipo": "select",
+    "opciones": [
+      {
+        "valor": "A",
+        "etiqueta": "No / no existen escalas definidas",
+        "puntos": 0
+      },
+      {
+        "valor": "B",
+        "etiqueta": "Sí, parcialmente o solo para algunos puestos",
+        "puntos": 1
+      },
+      {
+        "valor": "C",
+        "etiqueta": "Sí, escalas salariales definidas para los puestos o rangos",
+        "puntos": 2
+      }
+    ]
+  }
+]
