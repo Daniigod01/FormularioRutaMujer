@@ -24,14 +24,16 @@ export type Pregunta = {
 export const PREGUNTAS: Pregunta[] = preguntasData as Pregunta[];
 
 export const EJES = [
-  { id: "1", nombre: "Gestión del talento inclusivo y con perspectiva de género", corto: "Talento inclusivo" },
-  { id: "2", nombre: "Gestión empresarial con perspectiva de género", corto: "Gestión empresarial" },
   { id: "A", nombre: "Datos generales", corto: "Datos generales" },
   { id: "B", nombre: "Oportunidades de empleo", corto: "Oportunidades" },
   { id: "C", nombre: "Inclusión laboral", corto: "Inclusión laboral" },
+  { id: "1", nombre: "Gestión del talento inclusivo y con perspectiva de género", corto: "Talento inclusivo" },
+  { id: "2", nombre: "Gestión empresarial con perspectiva de género", corto: "Gestión empresarial" },
 ] as const;
 
-// Nombre exacto de "Tema" tal como debe salir en el exportable.
+// Nombre exacto de "Tema" tal como debe salir en el exportable (el
+// exportable usa su propio orden interno: 1 → 2 → A → B → C, independiente
+// del orden en que se responde el formulario).
 export const TEMA_EXPORT: Record<string, string> = {
   "1": "Eje 1 Talento inclusivo",
   "2": "Eje 2 Gestión empresarial",
