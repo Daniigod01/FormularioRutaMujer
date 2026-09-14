@@ -89,6 +89,19 @@ export default function AdminPage() {
     URL.revokeObjectURL(url);
   }
 
+  async function borrar(item: Diagnostico) {
+    if (!confirm(`¿Borrar el diagnóstico de "${item.empresa}"? Esta acción no se puede deshacer.`)) {
+      return;
+    }
+    const res = await fetch(`/api/admin/diagnosticos/${item.id}`, { method: "DELETE" });
+    const data = await res.json().catch(() => ({ ok: false, error: "Error al borrar." }));
+    if (!data.ok) {
+      alert("No se pudo borrar: " + data.error);
+      return;
+    }
+    setItems((prev) => prev.filter((i) => i.id !== item.id));
+  }
+
   const itemsFiltrados = items.filter(
     (i) =>
       i.empresa.toLowerCase().includes(busqueda.toLowerCase()) ||
@@ -197,12 +210,20 @@ export default function AdminPage() {
                       {item.fecha ? new Date(item.fecha).toLocaleDateString("es-CO") : "—"}
                     </td>
                     <td className="px-5 py-3 text-right">
-                      <button
-                        onClick={() => descargar(item)}
-                        className="rounded-full border border-[#2b2b2a]/30 px-3 py-1.5 text-xs font-medium hover:bg-black/5"
-                      >
-                        ⬇ Descargar Excel
-                      </button>
+                      <div className="flex justify-end gap-2">
+                        <button
+                          onClick={() => descargar(item)}
+                          className="rounded-full border border-[#2b2b2a]/30 px-3 py-1.5 text-xs font-medium hover:bg-black/5"
+                        >
+                          ⬇ Descargar Excel
+                        </button>
+                        <button
+                          onClick={() => borrar(item)}
+                          className="rounded-full border border-red-300 px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50"
+                        >
+                          🗑 Borrar
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

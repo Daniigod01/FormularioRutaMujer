@@ -19,6 +19,7 @@ export type Pregunta = {
   pendiente?: boolean;
   ayuda?: string;
   condicion?: { dependeDe: string; mostrarSi?: string[]; mostrarSiNoEs?: string };
+  requerido?: boolean;
 };
 
 export const PREGUNTAS: Pregunta[] = preguntasData as Pregunta[];
@@ -72,4 +73,29 @@ export function esVisible(p: Pregunta, respuestas: Respuestas): boolean {
     return typeof valorPadre === "string" && valorPadre !== "" && valorPadre !== p.condicion.mostrarSiNoEs;
   }
   return true;
+}
+
+// Una pregunta obligatoria y visible está "respondida" si tiene algo cargado:
+// texto no vacío, al menos una opción marcada, o al menos una fila de la
+// matriz contestada (las filas de texto libre dentro de la matriz no cuentan
+// como obligatorias).
+export function estaRespondida(p: Pregunta, respuestas: Respuestas): boolean {
+  const valor = respuestas[p.id];
+  if (p.tipo === "multiselect") {
+    return Array.isArray(valor) && valor.length > 0;
+  }
+  if (p.tipo === "matriz") {
+    const respuestasMatriz = (valor as Record<string, string>) || {};
+    return (p.filasMatriz || [])
+      .filter((f) => !f.esTexto)
+      .every((f) => Boolean(respuestasMatriz[f.id]));
+  }
+  return typeof valor === "string" && valor.trim().length > 0;
+}
+
+// Preguntas obligatorias y visibles de un eje que todavía no tienen respuesta.
+export function preguntasFaltantes(eje: string, respuestas: Respuestas): Pregunta[] {
+  return preguntasDeEje(eje).filter(
+    (p) => p.requerido && esVisible(p, respuestas) && !estaRespondida(p, respuestas)
+  );
 }

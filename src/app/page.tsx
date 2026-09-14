@@ -6,6 +6,7 @@ import {
   preguntasDeEje,
   bloquesDeEje,
   esVisible,
+  preguntasFaltantes,
   type Respuestas,
 } from "@/lib/preguntas";
 import { calcularResultadoCompleto } from "@/lib/puntaje";
@@ -20,12 +21,23 @@ export default function Home() {
   const [respuestas, setRespuestas] = useState<Respuestas>({});
   const [enviando, setEnviando] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [faltantes, setFaltantes] = useState<string[]>([]);
 
   function setRespuesta(id: string, valor: string | string[] | Record<string, string>) {
     setRespuestas((prev) => ({ ...prev, [id]: valor }));
+    setFaltantes([]);
   }
 
   function irSiguiente() {
+    if (paso !== "intro" && paso !== "enviado") {
+      const faltan = preguntasFaltantes(paso, respuestas);
+      if (faltan.length > 0) {
+        setFaltantes(faltan.map((p) => p.texto));
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+    }
+    setFaltantes([]);
     const idx = ORDEN_PASOS.indexOf(paso);
     if (idx < ORDEN_PASOS.length - 1) {
       setPaso(ORDEN_PASOS[idx + 1]);
@@ -34,6 +46,7 @@ export default function Home() {
   }
 
   function irAnterior() {
+    setFaltantes([]);
     const idx = ORDEN_PASOS.indexOf(paso);
     if (idx > 0) {
       setPaso(ORDEN_PASOS[idx - 1]);
@@ -42,6 +55,12 @@ export default function Home() {
   }
 
   async function enviar() {
+    const faltan = preguntasFaltantes("2", respuestas);
+    if (faltan.length > 0) {
+      setFaltantes(faltan.map((p) => p.texto));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     setEnviando(true);
     setError(null);
     try {
@@ -241,6 +260,18 @@ export default function Home() {
           </aside>
 
           <main className="flex-1 bg-white px-6 py-8 md:px-10 md:py-10">
+            {faltantes.length > 0 && (
+              <div className="mb-6 rounded-lg border border-red-300 bg-red-50 p-4 text-sm text-red-700">
+                <p className="font-semibold">
+                  Faltan {faltantes.length} pregunta(s) obligatoria(s) por responder en este eje:
+                </p>
+                <ul className="mt-1 list-disc space-y-0.5 pl-5">
+                  {faltantes.map((texto, i) => (
+                    <li key={i}>{texto}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             {bloques.length > 0 ? (
               bloques.map((bloque) => (
                 <section key={bloque} className="mb-10">

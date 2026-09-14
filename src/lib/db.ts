@@ -120,3 +120,17 @@ export async function obtenerDiagnostico(id: string): Promise<Respuestas | null>
     return null;
   }
 }
+
+export async function borrarDiagnostico(id: string): Promise<{ ok: true } | { ok: false; error: string }> {
+  if (!bdConfigurada()) {
+    return { ok: false, error: "La base de datos no está configurada en el servidor todavía." };
+  }
+  try {
+    await asegurarTabla();
+    const pool = obtenerPool();
+    await pool.query(`DELETE FROM diagnosticos WHERE id = $1`, [id]);
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : String(err) };
+  }
+}

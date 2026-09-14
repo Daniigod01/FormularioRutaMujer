@@ -6,6 +6,7 @@ function Etiqueta({ p }: { p: Pregunta }) {
   return (
     <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[var(--color-grafito)]">
       <span className="text-[var(--color-oscuro)]">#{p.numero}</span> {p.texto}
+      {p.requerido && <span className="ml-1 text-red-500">*</span>}
     </label>
   );
 }

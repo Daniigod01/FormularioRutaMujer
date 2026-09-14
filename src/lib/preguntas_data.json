@@ -6,7 +6,8 @@
     "texto": "Nombre de la organización",
     "puntuable": false,
     "ayuda": "",
-    "tipo": "texto"
+    "tipo": "texto",
+    "requerido": true
   },
   {
     "id": "EjeA_razon_social",
@@ -15,7 +16,8 @@
     "texto": "Razón Social",
     "puntuable": false,
     "ayuda": "",
-    "tipo": "texto"
+    "tipo": "texto",
+    "requerido": true
   },
   {
     "id": "EjeA_nit",
@@ -24,7 +26,8 @@
     "texto": "NIT",
     "puntuable": false,
     "ayuda": "",
-    "tipo": "texto"
+    "tipo": "texto",
+    "requerido": true
   },
   {
     "id": "EjeA_nombre_de_la_persona_que_responde",
@@ -33,7 +36,8 @@
     "texto": "Nombre de la persona que responde",
     "puntuable": false,
     "ayuda": "",
-    "tipo": "texto"
+    "tipo": "texto",
+    "requerido": true
   },
   {
     "id": "EjeA_cargo_de_la_persona_que_responde",
@@ -42,7 +46,8 @@
     "texto": "Cargo de la persona que responde",
     "puntuable": false,
     "ayuda": "",
-    "tipo": "texto"
+    "tipo": "texto",
+    "requerido": true
   },
   {
     "id": "EjeA_sector",
@@ -137,7 +142,8 @@
         "valor": "actividades_de_organizaciones",
         "etiqueta": "ACTIVIDADES DE ORGANIZACIONES Y ENTIDADES EXTRATERRITORIALES"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeA_cuantas_personas_empleadas_trabajan_en_t",
@@ -168,7 +174,8 @@
         "valor": "mas_de_500",
         "etiqueta": "Más de 500"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeA_cual_es_el_porcentaje_aproximado_de_muje",
@@ -177,7 +184,8 @@
     "texto": "¿Cuál es el porcentaje aproximado de mujeres y hombres que trabajan actualmente en la organización?",
     "puntuable": false,
     "ayuda": "Respuesta libre, ej. '60% mujeres / 40% hombres'",
-    "tipo": "texto"
+    "tipo": "texto",
+    "requerido": true
   },
   {
     "id": "EjeA_pais_o_paises_en_los_que_tienen_operacio",
@@ -186,7 +194,8 @@
     "texto": "País o países en los que tienen operaciones",
     "puntuable": false,
     "tipo": "texto",
-    "pendiente": false
+    "pendiente": false,
+    "requerido": true
   },
   {
     "id": "EjeA_cuenta_con_area_de_talento_humano",
@@ -205,7 +214,8 @@
         "valor": "no",
         "etiqueta": "No"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeB_tiene_vacantes_activas_actualmente",
@@ -223,7 +233,8 @@
         "valor": "no",
         "etiqueta": "No"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeB_tiene_vacantes_activas_con_la_agencia_de",
@@ -241,7 +252,8 @@
         "valor": "no",
         "etiqueta": "No"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeB_cuantas_vacantes_aproximadas_proyecta_ab",
@@ -271,7 +283,8 @@
         "valor": "mas_de_300",
         "etiqueta": "Más de 300"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeB_cual_es_la_modalidad_de_vinculacion_labo",
@@ -309,7 +322,8 @@
         "valor": "otra_especifique",
         "etiqueta": "Otra (especifique)"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeB_que_tipo_de_perfiles_son_los_mas_demanda",
@@ -343,7 +357,8 @@
         "valor": "directivos_o_estrategicos",
         "etiqueta": "Directivos o estratégicos"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeB_modalidad_de_trabajo_predominante_en_las",
@@ -369,7 +384,8 @@
         "valor": "modalidad_variable_segun_el_ca",
         "etiqueta": "Modalidad variable según el cargo"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeB_la_organizacion_tiene_disposicion_para_a",
@@ -395,7 +411,8 @@
         "valor": "no",
         "etiqueta": "No"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeB_que_aspectos_estaria_la_organizacion_dis",
@@ -441,7 +458,8 @@
     "condicion": {
       "dependeDe": "EjeB_la_organizacion_tiene_disposicion_para_a",
       "mostrarSiNoEs": "No"
-    }
+    },
+    "requerido": false
   },
   {
     "id": "EjeC_grupos_poblacionales",
@@ -502,7 +520,8 @@
         "valor": "NoSabe",
         "etiqueta": "No sabe / No registra"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeC_desde_su_experiencia_cuales_son_las_prin",
@@ -560,7 +579,8 @@
         "valor": "otra_especifique",
         "etiqueta": "Otra (especifique)"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeC_cuales_de_los_siguientes_requisitos_suel",
@@ -602,7 +622,8 @@
         "valor": "otra_especifique",
         "etiqueta": "Otra (especifique)"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeC_que_factores_internos_de_la_empresa_pued",
@@ -640,7 +661,8 @@
         "valor": "otra_especifique",
         "etiqueta": "Otra (especifique)"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeC_en_procesos_recientes_en_cuales_etapas_h",
@@ -686,7 +708,8 @@
         "valor": "otra_especifique",
         "etiqueta": "Otra (especifique)"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "EjeC_segun_su_experiencia_que_factores_influy",
@@ -728,7 +751,8 @@
         "valor": "otra_especifique",
         "etiqueta": "Otra (especifique)"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_la_empresa_tiene_experiencia_contratando_1",
@@ -754,7 +778,8 @@
         "etiqueta": "Sí, de manera sostenida o mediante iniciativas concretas",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_cuales_2",
@@ -770,7 +795,8 @@
         "B",
         "C"
       ]
-    }
+    },
+    "requerido": false
   },
   {
     "id": "Eje1_la_organizacion_cuenta_con_programas_cup_3",
@@ -796,7 +822,8 @@
         "etiqueta": "Sí, iniciativas o programas definidos",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_cuales_4",
@@ -812,7 +839,8 @@
         "B",
         "C"
       ]
-    }
+    },
+    "requerido": false
   },
   {
     "id": "Eje1_se_realizan_acciones_para_promover_un_pr_5",
@@ -838,7 +866,8 @@
         "etiqueta": "Sí, existe un proceso o política claramente definida",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_adjuntar_documento_6",
@@ -853,7 +882,8 @@
       "mostrarSi": [
         "C"
       ]
-    }
+    },
+    "requerido": false
   },
   {
     "id": "Eje1_el_proceso_de_reclutamiento_y_contrataci_7",
@@ -879,7 +909,8 @@
         "etiqueta": "Sí, de manera periódica o sistemática",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_los_lineamientos_de_reclutamiento_y_cont_8",
@@ -905,7 +936,8 @@
         "etiqueta": "Sí, de manera clara y general",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_se_capacita_a_todo_el_personal_que_parti_9",
@@ -931,7 +963,8 @@
         "etiqueta": "Sí, capacitaciones periódicas o programas definidos",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_los_perfiles_de_puestos_diferencian_clar_10",
@@ -957,7 +990,8 @@
         "etiqueta": "Sí, de manera clara y sistemática",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_se_revisan_requisitos_no_imprescindibles_11",
@@ -983,7 +1017,8 @@
         "etiqueta": "Sí, de manera regular o con criterios definidos",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_las_ofertas_laborales_utilizan_lenguaje_12",
@@ -1009,7 +1044,8 @@
         "etiqueta": "Sí, de manera consistente",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_las_vacantes_incluyen_informacion_transp_13",
@@ -1035,7 +1071,8 @@
         "etiqueta": "Sí, se incluye información clara y completa",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_las_vacantes_incluyen_informacion_transp_14",
@@ -1061,7 +1098,8 @@
         "etiqueta": "Sí, se incluye información clara y completa",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_la_organizacion_promueve_la_contratacion_15",
@@ -1087,7 +1125,8 @@
         "etiqueta": "Sí, mediante acciones o iniciativas concretas",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_las_entrevistas_de_seleccion_cuentan_con_16",
@@ -1113,7 +1152,8 @@
         "etiqueta": "Sí, de manera consistente con criterios definidos",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_se_analiza_la_proporcion_de_mujeres_post_17",
@@ -1139,7 +1179,8 @@
         "etiqueta": "Sí, de manera periódica o con seguimiento definido",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_se_analiza_la_proporcion_de_mujeres_y_ho_18",
@@ -1165,7 +1206,8 @@
         "etiqueta": "Sí, de manera periódica o con seguimiento definido",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_se_realizan_acciones_para_promover_proce_19",
@@ -1191,7 +1233,8 @@
         "etiqueta": "Sí, existe una política o proceso definido",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_la_politica_o_criterios_de_promocion_y_a_20",
@@ -1217,7 +1260,8 @@
         "etiqueta": "Sí, de manera clara y general",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_ofrece_formacionfortalecimiento_de_capac_21",
@@ -1243,7 +1287,8 @@
         "etiqueta": "Sí, de manera regular y analiza participación por género",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_cuenta_con_un_proceso_formal_de_induccio_22",
@@ -1269,7 +1314,8 @@
         "etiqueta": "Sí, existe un proceso formal definido",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_se_comunican_de_manera_clara_y_transpare_23",
@@ -1295,7 +1341,8 @@
         "etiqueta": "Sí, se comunica de manera clara y sistematizada",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_ofrece_condiciones_que_faciliten_la_part_24",
@@ -1321,7 +1368,8 @@
         "etiqueta": "Sí, existen medidas definidas o políticas claras",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_existe_igualdad_salarial_para_puestos_eq_25",
@@ -1347,7 +1395,8 @@
         "etiqueta": "Sí, existe igualdad salarial con criterios definidos",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_cuales_26",
@@ -1363,7 +1412,8 @@
         "B",
         "C"
       ]
-    }
+    },
+    "requerido": false
   },
   {
     "id": "Eje1_se_realizan_encuestas_de_clima_laboral_o_27",
@@ -1389,7 +1439,8 @@
         "etiqueta": "Sí, de manera periódica o con proceso definido",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_se_analizan_los_resultados_considerando_28",
@@ -1415,7 +1466,8 @@
         "etiqueta": "Sí, de manera sistemática considerando género u otras características",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_se_realizan_entrevistasencuesta_de_salid_29",
@@ -1441,7 +1493,8 @@
         "etiqueta": "Sí, de manera regular o con proceso definido",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_las_entrevistasencuesta_de_salida_incluy_30",
@@ -1467,7 +1520,8 @@
         "etiqueta": "Sí, de manera sistemática",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_se_implementan_medidas_cuando_se_identif_31",
@@ -1493,7 +1547,8 @@
         "etiqueta": "Sí, acciones definidas o con seguimiento",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_se_realiza_seguimiento_de_la_integracion_32",
@@ -1519,7 +1574,8 @@
         "etiqueta": "Sí, de manera sistemática o con proceso definido",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje1_como_de_que_manera_33",
@@ -1535,7 +1591,8 @@
         "B",
         "C"
       ]
-    }
+    },
+    "requerido": false
   },
   {
     "id": "Eje2_en_la_organizacion_se_realizan_acciones_1",
@@ -1561,7 +1618,8 @@
         "etiqueta": "Sí, existe una política o estrategia para la igualdad de género",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_cuales_2",
@@ -1577,7 +1635,8 @@
         "B",
         "C"
       ]
-    }
+    },
+    "requerido": false
   },
   {
     "id": "Eje2_se_cuenta_con_recursos_o_presupuesto_asi_3",
@@ -1603,7 +1662,8 @@
         "etiqueta": "Sí, existe presupuesto o recursos definidos",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_se_capacita_al_personal_en_materia_de_ig_4",
@@ -1629,7 +1689,8 @@
         "etiqueta": "Sí, de manera periódica, obligatoria o con programa definido",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_la_organizacion_esta_adherida_o_comprome_5",
@@ -1652,7 +1713,8 @@
         "valor": "si_esta_adherida_o_comprometid",
         "etiqueta": "Sí, está adherida o comprometida formalmente"
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_existe_una_persona_area_o_comite_respons_6",
@@ -1678,7 +1740,8 @@
         "etiqueta": "Sí, formalmente designado",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_se_realiza_seguimiento_o_evaluacion_de_l_7",
@@ -1704,7 +1767,8 @@
         "etiqueta": "Sí, de manera periódica o con proceso definido",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_cuenta_con_condicionesinfraestructura_pa_8",
@@ -1730,7 +1794,8 @@
         "etiqueta": "Sí, condiciones/infraestructura como parte de una política organizacional",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_se_realizan_acciones_para_promover_comun_9",
@@ -1756,7 +1821,8 @@
         "etiqueta": "Sí, existe una política o estrategia que orienta la comunicación",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_se_realizan_acciones_para_prevenir_y_ate_10",
@@ -1782,7 +1848,8 @@
         "etiqueta": "Sí, acciones definidas con protocolo o política",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_cuenta_con_canales_oficiales_para_report_11",
@@ -1808,7 +1875,8 @@
         "etiqueta": "Sí, canales oficiales definidos y conocidos por el personal",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_se_realizan_acciones_para_favorecer_el_e_12",
@@ -1834,7 +1902,8 @@
         "etiqueta": "Sí, acciones o medidas definidas implementadas regularmente",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_cuales_13",
@@ -1850,7 +1919,8 @@
         "B",
         "C"
       ]
-    }
+    },
+    "requerido": false
   },
   {
     "id": "Eje2_cuenta_con_politicas_o_medidas_de_flexib_14",
@@ -1876,7 +1946,8 @@
         "etiqueta": "Sí, políticas o medidas formales para toda la organización",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_cuales_15",
@@ -1892,7 +1963,8 @@
         "B",
         "C"
       ]
-    }
+    },
+    "requerido": false
   },
   {
     "id": "Eje2_implementa_modalidades_de_teletrabajo_o_16",
@@ -1918,7 +1990,8 @@
         "etiqueta": "Sí, modalidades definidas cuando el puesto lo permite",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_las_politicas_de_flexibilidad_laboral_y_17",
@@ -1944,7 +2017,8 @@
         "etiqueta": "Sí, forman parte de una política comunicada a todos los equipos",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_se_brindan_dias_adicionales_de_vacacione_18",
@@ -1970,7 +2044,8 @@
         "etiqueta": "Sí, existe un beneficio definido aplicable al personal",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_se_brindan_permisos_o_licencias_por_enfe_19",
@@ -1996,7 +2071,8 @@
         "etiqueta": "Sí, existe un beneficio definido aplicable al personal",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_se_brindan_permisos_o_licencias_adiciona_20",
@@ -2022,7 +2098,8 @@
         "etiqueta": "Sí, existe un beneficio definido aplicable al personal",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_recolecta_informacion_de_la_composicion_21",
@@ -2048,7 +2125,8 @@
         "etiqueta": "Sí, de manera sistemática con registros e indicadores definidos",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_cual_es_el_porcentaje_aproximado_de_muje_22",
@@ -2074,7 +2152,8 @@
         "etiqueta": "Entre 40-60%",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_se_realizan_acciones_para_promover_que_l_23",
@@ -2100,7 +2179,8 @@
         "etiqueta": "Sí, acciones o iniciativas definidas implementadas regularmente",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_cuales_24",
@@ -2116,7 +2196,8 @@
         "B",
         "C"
       ]
-    }
+    },
+    "requerido": false
   },
   {
     "id": "Eje2_utiliza_la_informacion_desagregada_por_g_25",
@@ -2142,7 +2223,8 @@
         "etiqueta": "Sí, de manera sistemática para toma de decisiones o mejoras",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_se_identifican_yo_miden_brechas_salarial_26",
@@ -2168,7 +2250,8 @@
         "etiqueta": "Sí, de manera periódica o con método definido",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   },
   {
     "id": "Eje2_cuenta_con_escalas_salariales_definidas_27",
@@ -2194,6 +2277,7 @@
         "etiqueta": "Sí, escalas salariales definidas para los puestos o rangos",
         "puntos": 2
       }
-    ]
+    ],
+    "requerido": true
   }
 ]
