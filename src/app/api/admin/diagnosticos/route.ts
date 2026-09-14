@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { cookieValida, COOKIE_ADMIN } from "@/lib/adminAuth";
-import { listarRegistrosDiagnostico } from "@/lib/zoho";
+import { listarDiagnosticos } from "@/lib/db";
 
 export async function GET() {
   const jar = await cookies();
@@ -11,6 +11,6 @@ export async function GET() {
     return NextResponse.json({ ok: false, error: "No autorizado." }, { status: 401 });
   }
 
-  const resultado = await listarRegistrosDiagnostico();
+  const resultado = await listarDiagnosticos();
   return NextResponse.json(resultado);
 }

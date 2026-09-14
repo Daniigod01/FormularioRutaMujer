@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { cookieValida, COOKIE_ADMIN } from "@/lib/adminAuth";
-import { obtenerRegistroDiagnostico } from "@/lib/zoho";
-import { generarExcelDesdeCamposZoho } from "@/lib/exportarDiagnostico";
+import { obtenerDiagnostico } from "@/lib/db";
+import { generarExcelDiagnostico } from "@/lib/exportarDiagnostico";
 
 export async function GET(
   req: Request,
@@ -18,16 +18,16 @@ export async function GET(
   }
 
   const { id } = await params;
-  const registro = await obtenerRegistroDiagnostico(id);
-  if (!registro) {
+  const respuestas = await obtenerDiagnostico(id);
+  if (!respuestas) {
     return new Response(JSON.stringify({ ok: false, error: "No se encontró el registro." }), {
       status: 404,
       headers: { "Content-Type": "application/json" },
     });
   }
 
-  const buffer = generarExcelDesdeCamposZoho(registro);
-  const nombreEmpresa = String(registro["EjeA_nombre_de_la_organizacion"] || "empresa")
+  const buffer = generarExcelDiagnostico(respuestas);
+  const nombreEmpresa = String(respuestas["EjeA_nombre_de_la_organizacion"] || "empresa")
     .replace(/[\\/:*?"<>|]/g, "")
     .trim()
     .slice(0, 60);
