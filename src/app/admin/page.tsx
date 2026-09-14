@@ -24,13 +24,15 @@ export default function AdminPage() {
           setAutenticado(false);
           return null;
         }
+        // La cookie es válida (no dio 401) — ya estamos autenticados,
+        // independientemente de si la consulta a la base de datos salió bien.
+        setAutenticado(true);
         return r.json();
       })
       .then((data) => {
         if (!data) return;
         if (data.ok) {
           setItems(data.items);
-          setAutenticado(true);
         } else {
           setErrorLista(data.error);
         }
@@ -39,6 +41,7 @@ export default function AdminPage() {
       .catch(() => {
         setErrorLista("No se pudo cargar la lista.");
         setCargandoLista(false);
+        setAutenticado((actual) => (actual === null ? false : actual));
       });
   }
 
@@ -169,7 +172,7 @@ export default function AdminPage() {
           <p className="text-sm text-gray-400">Cargando diagnósticos…</p>
         ) : errorLista ? (
           <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-800">
-            <p className="font-medium">No se pudo conectar con Zoho.</p>
+            <p className="font-medium">No se pudo conectar con la base de datos.</p>
             <p className="mt-1 text-xs opacity-80">{errorLista}</p>
           </div>
         ) : itemsFiltrados.length === 0 ? (
