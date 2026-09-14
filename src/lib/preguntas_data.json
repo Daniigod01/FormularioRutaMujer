@@ -485,7 +485,8 @@
       },
       {
         "id": "EjeC_grupo_otras_tipificaciones_de_m",
-        "etiqueta": "Otras tipificaciones de mujeres"
+        "etiqueta": "Otras tipificaciones de mujeres",
+        "esTexto": true
       }
     ],
     "opcionesMatriz": [

@@ -13,7 +13,7 @@ import PreguntaRenderer from "./PreguntaRenderer";
 
 type Paso = "intro" | "A" | "B" | "C" | "1" | "2" | "enviado";
 
-const ORDEN_PASOS: Paso[] = ["intro", "A", "B", "C", "1", "2", "enviado"];
+const ORDEN_PASOS: Paso[] = ["intro", "1", "2", "A", "B", "C", "enviado"];
 
 export default function Home() {
   const [paso, setPaso] = useState<Paso>("intro");
@@ -218,7 +218,7 @@ export default function Home() {
               >
                 Volver
               </button>
-              {paso === "2" ? (
+              {paso === "C" ? (
                 <button
                   onClick={enviar}
                   disabled={enviando}

@@ -7,9 +7,9 @@ export async function POST(req: Request) {
 
   const buffer = generarExcelDiagnostico(respuestas);
   const nombreEmpresa = String(respuestas["EjeA_nombre_de_la_organizacion"] || "empresa")
-    .replace(/[^\w\s]/g, "")
-    .replace(/\s+/g, "_")
-    .slice(0, 40);
+    .replace(/[\\/:*?"<>|]/g, "")
+    .trim()
+    .slice(0, 60);
 
   return new Response(new Uint8Array(buffer), {
     headers: {

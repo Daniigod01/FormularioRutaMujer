@@ -85,14 +85,7 @@ export default function PreguntaRenderer({
                 onChange={() => onChange(op.valor)}
                 className="mt-0.5"
               />
-              <span>
-                {op.etiqueta}
-                {typeof op.puntos === "number" && (
-                  <span className="ml-1 text-xs text-[var(--color-grafito)]/40">
-                    ({op.puntos} pt{op.puntos !== 1 ? "s" : ""})
-                  </span>
-                )}
-              </span>
+              <span>{op.etiqueta}</span>
             </label>
           ))}
         </div>
@@ -155,23 +148,40 @@ export default function PreguntaRenderer({
               </tr>
             </thead>
             <tbody>
-              {p.filasMatriz?.map((fila) => (
-                <tr key={fila.id} className="border-b border-[var(--color-line)]/60">
-                  <td className="px-4 py-2.5">{fila.etiqueta}</td>
-                  {p.opcionesMatriz?.map((op) => (
-                    <td key={op.valor} className="px-4 py-2.5 text-center">
+              {p.filasMatriz?.map((fila) =>
+                fila.esTexto ? (
+                  <tr key={fila.id} className="border-b border-[var(--color-line)]/60">
+                    <td className="px-4 py-2.5">{fila.etiqueta}</td>
+                    <td colSpan={p.opcionesMatriz?.length || 3} className="px-4 py-2">
                       <input
-                        type="radio"
-                        name={fila.id}
-                        checked={respuestasMatriz[fila.id] === op.valor}
-                        onChange={() =>
-                          onChange({ ...respuestasMatriz, [fila.id]: op.valor })
+                        type="text"
+                        placeholder="Especifique (opcional)"
+                        value={respuestasMatriz[fila.id] || ""}
+                        onChange={(e) =>
+                          onChange({ ...respuestasMatriz, [fila.id]: e.target.value })
                         }
+                        className="w-full rounded-md border border-[var(--color-line)] px-3 py-1.5 text-sm"
                       />
                     </td>
-                  ))}
-                </tr>
-              ))}
+                  </tr>
+                ) : (
+                  <tr key={fila.id} className="border-b border-[var(--color-line)]/60">
+                    <td className="px-4 py-2.5">{fila.etiqueta}</td>
+                    {p.opcionesMatriz?.map((op) => (
+                      <td key={op.valor} className="px-4 py-2.5 text-center">
+                        <input
+                          type="radio"
+                          name={fila.id}
+                          checked={respuestasMatriz[fila.id] === op.valor}
+                          onChange={() =>
+                            onChange({ ...respuestasMatriz, [fila.id]: op.valor })
+                          }
+                        />
+                      </td>
+                    ))}
+                  </tr>
+                )
+              )}
             </tbody>
           </table>
         </div>
