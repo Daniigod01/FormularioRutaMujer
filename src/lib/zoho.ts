@@ -104,3 +104,41 @@ export async function obtenerRegistroDiagnostico(id: string): Promise<Record<str
     return null;
   }
 }
+
+export type DiagnosticoResumen = {
+  id: string;
+  empresa: string;
+  nit: string;
+  fecha: string;
+};
+
+export type ListaDiagnosticos = { ok: true; items: DiagnosticoResumen[] } | { ok: false; error: string };
+
+// Lista los diagnósticos guardados en el módulo (para el panel de admin).
+export async function listarRegistrosDiagnostico(): Promise<ListaDiagnosticos> {
+  if (!credencialesConfiguradas()) {
+    return { ok: false, error: "Credenciales de Zoho no configuradas en el servidor todavía." };
+  }
+  try {
+    const token = await obtenerAccessToken();
+    const campos = ["id", "EjeA_nombre_de_la_organizacion", "EjeA_nit", "Created_Time"];
+    const res = await fetch(
+      `${ZOHO_API_DOMAIN}/crm/v6/${MODULO_DIAGNOSTICO}?fields=${campos.join(",")}&sort_by=Created_Time&sort_order=desc&per_page=200`,
+      { headers: { Authorization: `Zoho-oauthtoken ${token}` } }
+    );
+    if (!res.ok) {
+      const cuerpo = await res.text();
+      throw new Error(`Zoho respondió ${res.status}: ${cuerpo}`);
+    }
+    const data = await res.json();
+    const items: DiagnosticoResumen[] = (data?.data || []).map((r: Record<string, unknown>) => ({
+      id: String(r.id),
+      empresa: String(r["EjeA_nombre_de_la_organizacion"] ?? "(sin nombre)"),
+      nit: String(r["EjeA_nit"] ?? ""),
+      fecha: String(r["Created_Time"] ?? ""),
+    }));
+    return { ok: true, items };
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : String(err) };
+  }
+}
