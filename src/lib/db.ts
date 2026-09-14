@@ -1,18 +1,38 @@
-import { sql } from "@vercel/postgres";
+import { Pool } from "pg";
 import type { Respuestas } from "./preguntas";
 import type { ResultadoEje } from "./puntaje";
 
+// Cadena de conexión: Supabase (u otro Postgres estándar conectado por
+// Vercel Marketplace) expone POSTGRES_URL o POSTGRES_URL_NON_POOLING.
+function cadenaConexion(): string | undefined {
+  return process.env.POSTGRES_URL || process.env.POSTGRES_URL_NON_POOLING || process.env.DATABASE_URL;
+}
+
 function bdConfigurada() {
-  return Boolean(process.env.POSTGRES_URL);
+  return Boolean(cadenaConexion());
+}
+
+// Un solo Pool reutilizado entre invocaciones "calientes" de la función
+// serverless (igual patrón que usamos para cachear el token de Zoho en Ruta Mujer).
+const globalConTipo = globalThis as unknown as { __pgPool?: Pool };
+
+function obtenerPool(): Pool {
+  if (!globalConTipo.__pgPool) {
+    globalConTipo.__pgPool = new Pool({
+      connectionString: cadenaConexion(),
+      ssl: { rejectUnauthorized: false },
+      max: 3,
+    });
+  }
+  return globalConTipo.__pgPool;
 }
 
 let tablaLista = false;
 
-// Crea la tabla si todavía no existe. Se llama antes de cada operación —
-// es barato (IF NOT EXISTS) y evita depender de un paso manual de "migración".
 async function asegurarTabla() {
   if (tablaLista) return;
-  await sql`
+  const pool = obtenerPool();
+  await pool.query(`
     CREATE TABLE IF NOT EXISTS diagnosticos (
       id SERIAL PRIMARY KEY,
       empresa TEXT NOT NULL DEFAULT '',
@@ -21,7 +41,7 @@ async function asegurarTabla() {
       resultado JSONB NOT NULL,
       creado_en TIMESTAMPTZ NOT NULL DEFAULT now()
     )
-  `;
+  `);
   tablaLista = true;
 }
 
@@ -36,14 +56,16 @@ export async function guardarDiagnostico(
   }
   try {
     await asegurarTabla();
+    const pool = obtenerPool();
     const empresa = String(respuestas["EjeA_nombre_de_la_organizacion"] ?? "");
     const nit = String(respuestas["EjeA_nit"] ?? "");
-    const fila = await sql`
-      INSERT INTO diagnosticos (empresa, nit, respuestas, resultado)
-      VALUES (${empresa}, ${nit}, ${JSON.stringify(respuestas)}::jsonb, ${JSON.stringify(resultado)}::jsonb)
-      RETURNING id
-    `;
-    return { ok: true, id: fila.rows[0].id as number };
+    const resultadoQuery = await pool.query(
+      `INSERT INTO diagnosticos (empresa, nit, respuestas, resultado)
+       VALUES ($1, $2, $3::jsonb, $4::jsonb)
+       RETURNING id`,
+      [empresa, nit, JSON.stringify(respuestas), JSON.stringify(resultado)]
+    );
+    return { ok: true, id: resultadoQuery.rows[0].id as number };
   } catch (err) {
     return { ok: false, error: err instanceof Error ? err.message : String(err) };
   }
@@ -58,12 +80,10 @@ export async function listarDiagnosticos(): Promise<ListaDiagnosticos> {
   }
   try {
     await asegurarTabla();
-    const resultado = await sql`
-      SELECT id, empresa, nit, creado_en
-      FROM diagnosticos
-      ORDER BY creado_en DESC
-      LIMIT 500
-    `;
+    const pool = obtenerPool();
+    const resultado = await pool.query(
+      `SELECT id, empresa, nit, creado_en FROM diagnosticos ORDER BY creado_en DESC LIMIT 500`
+    );
     const items: DiagnosticoResumen[] = resultado.rows.map((r) => ({
       id: r.id as number,
       empresa: String(r.empresa || "(sin nombre)"),
@@ -80,7 +100,8 @@ export async function obtenerDiagnostico(id: string): Promise<Respuestas | null>
   if (!bdConfigurada()) return null;
   try {
     await asegurarTabla();
-    const resultado = await sql`SELECT respuestas FROM diagnosticos WHERE id = ${id}`;
+    const pool = obtenerPool();
+    const resultado = await pool.query(`SELECT respuestas FROM diagnosticos WHERE id = $1`, [id]);
     if (resultado.rows.length === 0) return null;
     return resultado.rows[0].respuestas as Respuestas;
   } catch {
