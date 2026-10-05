@@ -92,6 +92,11 @@ export default function Home() {
   const btnSecundario =
     "w-48 rounded-full border-2 border-white px-6 py-2.5 text-base font-semibold text-white transition-colors hover:bg-white/15";
 
+  const btnPrimarioMovil =
+    "flex-1 rounded-full bg-[var(--color-amarillo)] px-4 py-3 text-base font-semibold text-[var(--color-azul)] transition-colors active:bg-white disabled:opacity-60";
+  const btnSecundarioMovil =
+    "flex-1 rounded-full border-2 border-white px-4 py-2.5 text-base font-semibold text-white transition-colors active:bg-white/15";
+
   return (
     <div className="min-h-screen bg-white">
       {/* Encabezado: Fundación Colombia Incluyente a la izquierda, Colsubsidio a la derecha
@@ -216,10 +221,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <p className="mt-10 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-azul)]">
-                Súmese a Ruta Mujer y sea parte del cambio
-              </p>
-              <div className="mt-6">
+              <div className="mt-8">
                 <button
                   onClick={irSiguiente}
                   className="rounded-full bg-[var(--color-amarillo)] px-9 py-3.5 text-base font-bold text-[var(--color-azul)] transition-colors hover:bg-[var(--color-azul)] hover:text-[var(--color-amarillo)]"
@@ -236,13 +238,13 @@ export default function Home() {
       {/* Pasos con eje: sidebar azul + contenido */}
       {esPasoEje && (
         <div className="flex min-h-[70vh] flex-col md:flex-row">
-          <aside className="on-dark flex w-full shrink-0 flex-col items-center justify-center gap-8 border-t border-white/20 bg-[var(--color-azul)] p-8 text-white md:sticky md:top-0 md:h-screen md:w-[30%]">
+          <aside className="on-dark flex w-full shrink-0 flex-col items-center justify-center gap-8 border-t border-white/20 bg-[var(--color-azul)] px-6 py-6 text-white md:sticky md:top-0 md:h-screen md:w-[30%] md:p-8">
             <h3 className="text-center font-[family-name:var(--font-display)] text-3xl font-bold leading-tight text-[var(--color-amarillo)]">
               EJE {ejeActual?.id}
               <br />
               {ejeActual?.corto.toUpperCase()}
             </h3>
-            <div className="flex flex-col items-center gap-3">
+            <div className="hidden flex-col items-center gap-3 md:flex">
               <button onClick={irAnterior} className={btnSecundario}>
                 Volver
               </button>
@@ -259,7 +261,7 @@ export default function Home() {
             </div>
           </aside>
 
-          <main className="flex-1 bg-white px-6 py-8 md:px-10 md:py-10">
+          <main className="flex-1 bg-white px-6 pb-36 pt-8 md:px-10 md:py-10">
             {faltantes.length > 0 && (
               <div
                 role="alert"
@@ -310,6 +312,32 @@ export default function Home() {
               </div>
             )}
           </main>
+
+          {/* Barra fija inferior solo en móvil: Volver / Siguiente siempre a la vista */}
+          <div
+            className="on-dark fixed inset-x-0 bottom-0 z-40 border-t-4 border-[var(--color-amarillo)] bg-[var(--color-azul)] px-4 pt-3 md:hidden"
+            style={{ paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 0.75rem)" }}
+          >
+            {error && (
+              <p role="alert" className="mb-2 text-center text-sm font-medium text-[var(--color-amarillo)]">
+                {error}
+              </p>
+            )}
+            <div className="mx-auto flex max-w-md gap-3">
+              <button onClick={irAnterior} className={btnSecundarioMovil}>
+                Volver
+              </button>
+              {paso === "2" ? (
+                <button onClick={enviar} disabled={enviando} className={btnPrimarioMovil}>
+                  {enviando ? "Enviando…" : "Finalizar"}
+                </button>
+              ) : (
+                <button onClick={irSiguiente} className={btnPrimarioMovil}>
+                  Siguiente eje
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       )}
 
