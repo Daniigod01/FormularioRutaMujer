@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  /* Paleta del formulario (carbón + amarillo + rosa) */
-  --color-oscuro: #2b2b2a;
-  --color-acento: #f2c230;
-  --color-acento-texto: #2b2b2a;
-  --color-boton: #d6597a;
-  --color-grafito: #2b2b2b;
-  --color-blanco: #ffffff;
-  --color-paper: #ffffff;
-  --color-line: #e5e5e3;
+  /* Paleta corporativa Colsubsidio (Manual de marca 2020, sección 1.3) */
+  --color-azul: #001f5b;      /* Azul Colsubsidio */
+  --color-amarillo: #ffd30f;  /* Amarillo Colsubsidio */
+  --color-grafito: #2b2b2b;   /* Grafito: tipografía */
+  --color-blanco: #ffffff;    /* Blanco: fondos */
 
-  --font-display: "Jost", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  /* Tintas al 20 % permitidas por el manual (nunca se añaden tonos nuevos) */
+  --color-azul-20: #ccd2de;
+  --color-grafito-20: #d5d5d5;
+  --color-amarillo-20: #fff6cf;
+
+  /* Futura New es la tipografía corporativa; Jost es su equivalente libre para web.
+     Si se licencia Futura New o Cera Pro, basta con cambiar estas dos variables. */
+  --font-display: "Jost", "Futura", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Jost", "Futura", ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
@@ -23,23 +26,33 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background: var(--color-paper);
+  background: var(--color-blanco);
   color: var(--color-grafito);
   font-family: var(--font-body);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--color-acento);
-  color: var(--color-acento-texto);
+  background: var(--color-amarillo);
+  color: var(--color-azul);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-boton);
+  outline: 3px solid var(--color-azul);
   outline-offset: 2px;
 }
 
-input[type="radio"], input[type="checkbox"] {
-  accent-color: var(--color-oscuro);
+/* Sobre fondo azul el foco se dibuja en amarillo para que siga siendo visible */
+.on-dark :focus-visible {
+  outline-color: var(--color-amarillo);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--color-azul);
+  width: 1.05rem;
+  height: 1.05rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

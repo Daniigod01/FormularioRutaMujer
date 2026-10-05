@@ -108,118 +108,151 @@ export default function AdminPage() {
       i.nit.includes(busqueda)
   );
 
+  const logos = (alto: string) => (
+    <div className={alto === "grande" ? "flex items-center gap-4" : "flex items-center gap-4 sm:gap-6"}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/fci-logo.png" alt="Fundación Colombia Incluyente" className={alto === "grande" ? "h-10 w-auto" : "h-10 w-auto sm:h-12"} />
+      <div className="h-9 w-px bg-[var(--color-grafito-20)] sm:h-10" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/logo-colsubsidio.png" alt="Colsubsidio" className={alto === "grande" ? "h-8 w-auto" : "h-8 w-auto sm:h-10"} />
+    </div>
+  );
+
   if (autenticado === null) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#2b2b2a]">
-        <p className="text-white/50 text-sm">Cargando…</p>
+      <div className="flex min-h-screen items-center justify-center bg-[var(--color-azul)]">
+        <p className="text-sm text-white/80">Cargando…</p>
       </div>
     );
   }
 
   if (!autenticado) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#2b2b2a] px-6">
+      <div className="on-dark flex min-h-screen items-center justify-center bg-[var(--color-azul)] px-6">
         <form
           onSubmit={iniciarSesion}
-          className="w-full max-w-sm rounded-xl bg-white p-8 shadow-lg"
+          className="w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-xl"
         >
-          <h1 className="mb-1 text-xl font-bold text-[#2b2b2a]">Panel Ruta Mujer</h1>
-          <p className="mb-6 text-sm text-gray-500">
-            Diagnósticos de empresas — acceso restringido
-          </p>
-          <label className="mb-1 block text-xs font-semibold uppercase text-gray-600">
-            Clave de acceso
-          </label>
-          <input
-            type="password"
-            value={clave}
-            onChange={(e) => setClave(e.target.value)}
-            autoFocus
-            className="mb-4 w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm"
-          />
-          {errorLogin && <p className="mb-4 text-sm text-red-600">{errorLogin}</p>}
-          <button
-            type="submit"
-            disabled={cargando}
-            className="w-full rounded-full bg-[#2b2b2a] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-50"
-          >
-            {cargando ? "Ingresando…" : "Ingresar"}
-          </button>
+          <div className="flex justify-center border-b-4 border-[var(--color-amarillo)] bg-white px-6 py-5">
+            {logos("grande")}
+          </div>
+          <div className="p-8">
+            <h1 className="mb-1 font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--color-azul)]">
+              Panel Ruta Mujer
+            </h1>
+            <p className="mb-6 text-base text-[var(--color-grafito)]">
+              Diagnósticos de empresas. Acceso restringido.
+            </p>
+            <label htmlFor="clave" className="mb-1.5 block text-base font-medium text-[var(--color-grafito)]">
+              Clave de acceso
+            </label>
+            <input
+              id="clave"
+              type="password"
+              value={clave}
+              onChange={(e) => setClave(e.target.value)}
+              autoFocus
+              className="mb-4 w-full rounded-lg border border-[var(--color-grafito-20)] px-4 py-2.5 text-base focus:border-[var(--color-azul)]"
+            />
+            {errorLogin && (
+              <p role="alert" className="mb-4 rounded-md border-l-4 border-[var(--color-amarillo)] bg-[var(--color-amarillo-20)] px-3 py-2 text-[15px] text-[var(--color-azul)]">
+                {errorLogin}
+              </p>
+            )}
+            <button
+              type="submit"
+              disabled={cargando}
+              className="w-full rounded-full bg-[var(--color-azul)] px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-[var(--color-grafito)] focus-visible:outline-[var(--color-azul)] disabled:opacity-60"
+            >
+              {cargando ? "Ingresando…" : "Ingresar"}
+            </button>
+          </div>
         </form>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#f7f6f2]">
-      <header className="flex items-center justify-between bg-[#2b2b2a] px-6 py-4 text-white">
-        <div>
-          <p className="text-xs uppercase tracking-wide text-white/60">Ruta Mujer</p>
-          <h1 className="text-lg font-bold">Panel de diagnósticos empresariales</h1>
+    <div className="min-h-screen bg-white">
+      <header className="border-b-4 border-[var(--color-amarillo)] bg-white">
+        <div className="mx-auto flex max-w-5xl items-center justify-end gap-4 px-4 py-3 sm:px-6 sm:py-4">
+          {logos("responsive")}
         </div>
-        <button
-          onClick={cerrarSesion}
-          className="rounded-full border border-white/25 px-3 py-1.5 text-xs hover:bg-white/10"
-        >
-          Cerrar sesión
-        </button>
       </header>
 
-      <main className="mx-auto max-w-4xl px-6 py-8">
-        <div className="mb-4 flex items-center justify-between gap-3">
+      <div className="on-dark bg-[var(--color-azul)] text-white">
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-5 sm:px-6">
+          <div>
+            <p className="text-base font-medium text-[var(--color-amarillo)]">Ruta Mujer</p>
+            <h1 className="font-[family-name:var(--font-display)] text-2xl font-bold sm:text-3xl">
+              Panel de diagnósticos empresariales
+            </h1>
+          </div>
+          <button
+            onClick={cerrarSesion}
+            className="shrink-0 rounded-full border-2 border-white px-4 py-2 text-base font-semibold text-white transition-colors hover:bg-white/15"
+          >
+            Cerrar sesión
+          </button>
+        </div>
+      </div>
+
+      <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
           <input
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}
             placeholder="Buscar por empresa o NIT…"
-            className="w-72 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm"
+            aria-label="Buscar por empresa o NIT"
+            className="w-full rounded-full border border-[var(--color-grafito-20)] bg-white px-5 py-2.5 text-base focus:border-[var(--color-azul)] sm:w-80"
           />
           <button
             onClick={cargarLista}
-            className="rounded-full border border-gray-300 bg-white px-4 py-2 text-xs font-medium hover:bg-gray-50"
+            className="rounded-full border-2 border-[var(--color-azul)] px-5 py-2 text-base font-semibold text-[var(--color-azul)] transition-colors hover:bg-[var(--color-azul)] hover:text-white"
           >
             ⟳ Actualizar
           </button>
         </div>
 
         {cargandoLista ? (
-          <p className="text-sm text-gray-400">Cargando diagnósticos…</p>
+          <p className="text-base text-[var(--color-grafito)]">Cargando diagnósticos…</p>
         ) : errorLista ? (
-          <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-800">
-            <p className="font-medium">No se pudo conectar con la base de datos.</p>
-            <p className="mt-1 text-xs opacity-80">{errorLista}</p>
+          <div role="alert" className="rounded-lg border-l-4 border-[var(--color-amarillo)] bg-[var(--color-amarillo-20)] p-4 text-[15px] text-[var(--color-azul)]">
+            <p className="font-semibold">No se pudo conectar con la base de datos.</p>
+            <p className="mt-1">{errorLista}</p>
           </div>
         ) : itemsFiltrados.length === 0 ? (
-          <p className="text-sm text-gray-400">Todavía no hay diagnósticos registrados.</p>
+          <p className="text-base text-[var(--color-grafito)]">Todavía no hay diagnósticos registrados.</p>
         ) : (
-          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white">
-            <table className="w-full text-left text-sm">
+          <div className="overflow-x-auto rounded-xl border border-[var(--color-grafito-20)] bg-white">
+            <table className="w-full text-left text-base">
               <thead>
-                <tr className="border-b border-gray-200 bg-gray-50 text-xs uppercase text-gray-500">
-                  <th className="px-5 py-3">Empresa</th>
-                  <th className="px-5 py-3">NIT</th>
-                  <th className="px-5 py-3">Fecha</th>
-                  <th className="px-5 py-3"></th>
+                <tr className="bg-[var(--color-azul)] text-sm font-semibold text-white">
+                  <th className="px-5 py-3.5">Empresa</th>
+                  <th className="px-5 py-3.5">NIT</th>
+                  <th className="px-5 py-3.5">Fecha</th>
+                  <th className="px-5 py-3.5"></th>
                 </tr>
               </thead>
               <tbody>
                 {itemsFiltrados.map((item) => (
-                  <tr key={item.id} className="border-b border-gray-100 last:border-0">
-                    <td className="px-5 py-3 font-medium text-[#2b2b2a]">{item.empresa}</td>
-                    <td className="px-5 py-3 text-gray-500">{item.nit}</td>
-                    <td className="px-5 py-3 text-gray-500">
+                  <tr key={item.id} className="border-b border-[var(--color-grafito-20)] last:border-0 hover:bg-[var(--color-azul-20)]/30">
+                    <td className="px-5 py-3.5 font-semibold text-[var(--color-azul)]">{item.empresa}</td>
+                    <td className="whitespace-nowrap px-5 py-3.5 text-[var(--color-grafito)]">{item.nit}</td>
+                    <td className="whitespace-nowrap px-5 py-3.5 text-[var(--color-grafito)]">
                       {item.fecha ? new Date(item.fecha).toLocaleDateString("es-CO") : "—"}
                     </td>
-                    <td className="px-5 py-3 text-right">
+                    <td className="px-5 py-3.5 text-right">
                       <div className="flex justify-end gap-2">
                         <button
                           onClick={() => descargar(item)}
-                          className="rounded-full border border-[#2b2b2a]/30 px-3 py-1.5 text-xs font-medium hover:bg-black/5"
+                          className="whitespace-nowrap rounded-full bg-[var(--color-amarillo)] px-4 py-1.5 text-[15px] font-semibold text-[var(--color-azul)] transition-colors hover:bg-[var(--color-azul)] hover:text-[var(--color-amarillo)]"
                         >
                           ⬇ Descargar Excel
                         </button>
                         <button
                           onClick={() => borrar(item)}
-                          className="rounded-full border border-red-300 px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50"
+                          className="whitespace-nowrap rounded-full border-2 border-[var(--color-grafito)] px-4 py-1.5 text-[15px] font-semibold text-[var(--color-grafito)] transition-colors hover:bg-[var(--color-grafito)] hover:text-white"
                         >
                           🗑 Borrar
                         </button>

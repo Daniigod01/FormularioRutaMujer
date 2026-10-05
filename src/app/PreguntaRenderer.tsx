@@ -4,9 +4,9 @@ import { type Pregunta, type Respuestas } from "@/lib/preguntas";
 
 function Etiqueta({ p }: { p: Pregunta }) {
   return (
-    <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-[var(--color-grafito)]">
-      <span className="text-[var(--color-oscuro)]">#{p.numero}</span> {p.texto}
-      {p.requerido && <span className="ml-1 text-red-500">*</span>}
+    <label className="mb-2.5 block text-[17px] font-medium leading-snug text-[var(--color-grafito)]">
+      <span className="mr-1 font-bold text-[var(--color-azul)]">#{p.numero}</span> {p.texto}
+      {p.requerido && <span className="ml-1 font-bold text-[var(--color-azul)]">*</span>}
     </label>
   );
 }
@@ -32,18 +32,18 @@ export default function PreguntaRenderer({
             type="text"
             value={(valor as string) || ""}
             onChange={(e) => onChange(e.target.value)}
-            className="w-full rounded-lg border border-[var(--color-line)] bg-white px-4 py-2.5 text-sm focus:border-[var(--color-oscuro)]"
+            className="w-full rounded-lg border border-[var(--color-grafito-20)] bg-white px-4 py-2.5 text-base text-[var(--color-grafito)] focus:border-[var(--color-azul)]"
           />
         ) : (
           <textarea
             value={(valor as string) || ""}
             onChange={(e) => onChange(e.target.value)}
             rows={3}
-            className="w-full rounded-lg border border-[var(--color-line)] bg-white px-4 py-2.5 text-sm focus:border-[var(--color-oscuro)]"
+            className="w-full rounded-lg border border-[var(--color-grafito-20)] bg-white px-4 py-2.5 text-base text-[var(--color-grafito)] focus:border-[var(--color-azul)]"
           />
         )}
         {p.pendiente && (
-          <p className="mt-1 text-xs text-[var(--color-oscuro)]/70">
+          <p className="mt-1 text-sm text-[var(--color-azul)]">
             ⚠ Listado pendiente de confirmar — por ahora, escribe la respuesta directamente.
           </p>
         )}
@@ -53,12 +53,12 @@ export default function PreguntaRenderer({
 
   if (p.tipo === "archivo") {
     return (
-      <div className="mb-6 rounded-lg border border-dashed border-[var(--color-oscuro)]/30 bg-[var(--color-oscuro)]/5 p-4">
+      <div className="mb-6 rounded-lg border border-dashed border-[var(--color-azul)] bg-[var(--color-azul-20)]/40 p-4">
         <Etiqueta p={p} />
         <input
           type="file"
           onChange={(e) => onChange(e.target.files?.[0]?.name || "")}
-          className="text-sm"
+          className="text-base"
         />
       </div>
     );
@@ -73,10 +73,10 @@ export default function PreguntaRenderer({
             <label
               key={op.valor}
               className={
-                "flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-2.5 text-sm transition-colors " +
+                "flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-3 text-base transition-colors " +
                 (valor === op.valor
-                  ? "border-[var(--color-oscuro)] bg-[var(--color-oscuro)]/5"
-                  : "border-[var(--color-line)] bg-white hover:bg-black/[0.02]")
+                  ? "border-[var(--color-azul)] bg-[var(--color-azul-20)]"
+                  : "border-[var(--color-grafito-20)] bg-white hover:border-[var(--color-azul)]")
               }
             >
               <input
@@ -84,7 +84,7 @@ export default function PreguntaRenderer({
                 name={p.id}
                 checked={valor === op.valor}
                 onChange={() => onChange(op.valor)}
-                className="mt-0.5"
+                className="mt-1 shrink-0"
               />
               <span>{op.etiqueta}</span>
             </label>
@@ -111,17 +111,17 @@ export default function PreguntaRenderer({
             <label
               key={op.valor}
               className={
-                "flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-2.5 text-sm transition-colors " +
+                "flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-3 text-base transition-colors " +
                 (seleccionadas.includes(op.valor)
-                  ? "border-[var(--color-oscuro)] bg-[var(--color-oscuro)]/5"
-                  : "border-[var(--color-line)] bg-white hover:bg-black/[0.02]")
+                  ? "border-[var(--color-azul)] bg-[var(--color-azul-20)]"
+                  : "border-[var(--color-grafito-20)] bg-white hover:border-[var(--color-azul)]")
               }
             >
               <input
                 type="checkbox"
                 checked={seleccionadas.includes(op.valor)}
                 onChange={() => toggle(op.valor)}
-                className="mt-0.5"
+                className="mt-1 shrink-0"
               />
               <span>{op.etiqueta}</span>
             </label>
@@ -136,13 +136,13 @@ export default function PreguntaRenderer({
     return (
       <div className="mb-6">
         <Etiqueta p={p} />
-        <div className="overflow-x-auto rounded-lg border border-[var(--color-line)]">
-          <table className="w-full text-left text-sm">
+        <div className="overflow-x-auto rounded-lg border border-[var(--color-grafito-20)]">
+          <table className="w-full text-left text-base">
             <thead>
-              <tr className="border-b border-[var(--color-line)] bg-black/[0.02] text-xs uppercase text-[var(--color-grafito)]/50">
-                <th className="px-4 py-2">Grupo poblacional</th>
+              <tr className="bg-[var(--color-azul)] text-sm font-semibold text-white">
+                <th className="px-4 py-3">Grupo poblacional</th>
                 {p.opcionesMatriz?.map((op) => (
-                  <th key={op.valor} className="px-4 py-2 text-center">
+                  <th key={op.valor} className="px-4 py-3 text-center">
                     {op.etiqueta}
                   </th>
                 ))}
@@ -151,7 +151,7 @@ export default function PreguntaRenderer({
             <tbody>
               {p.filasMatriz?.map((fila) =>
                 fila.esTexto ? (
-                  <tr key={fila.id} className="border-b border-[var(--color-line)]/60">
+                  <tr key={fila.id} className="border-b border-[var(--color-grafito-20)] last:border-0">
                     <td className="px-4 py-2.5">{fila.etiqueta}</td>
                     <td colSpan={p.opcionesMatriz?.length || 3} className="px-4 py-2">
                       <input
@@ -161,12 +161,12 @@ export default function PreguntaRenderer({
                         onChange={(e) =>
                           onChange({ ...respuestasMatriz, [fila.id]: e.target.value })
                         }
-                        className="w-full rounded-md border border-[var(--color-line)] px-3 py-1.5 text-sm"
+                        className="w-full rounded-md border border-[var(--color-grafito-20)] px-3 py-1.5 text-base focus:border-[var(--color-azul)]"
                       />
                     </td>
                   </tr>
                 ) : (
-                  <tr key={fila.id} className="border-b border-[var(--color-line)]/60">
+                  <tr key={fila.id} className="border-b border-[var(--color-grafito-20)] last:border-0">
                     <td className="px-4 py-2.5">{fila.etiqueta}</td>
                     {p.opcionesMatriz?.map((op) => (
                       <td key={op.valor} className="px-4 py-2.5 text-center">
