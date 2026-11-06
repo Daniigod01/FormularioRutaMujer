@@ -16,11 +16,15 @@ export async function POST(req: Request) {
     const guardado = await guardarDiagnostico(respuestas, resultado);
 
     if (!guardado.ok) {
-      // Si la base de datos aún no está configurada, dejamos que el
-      // formulario avance igual (modo prueba), para poder probar el flujo
-      // completo y el exportable sin quedar bloqueados.
-      console.error("guardarDiagnostico:", guardado.error);
-      return NextResponse.json({ ok: true, modoPrueba: true, error: guardado.error });
+      // Nunca responder "éxito" si no se guardó: la empresa vería la pantalla
+      // de envío exitoso y el diagnóstico se perdería sin que nadie lo note.
+      // Dejamos las respuestas en el log para poder recuperarlas si hace falta.
+      console.error("guardarDiagnostico FALLÓ:", guardado.error);
+      console.error("Respuestas no guardadas:", JSON.stringify(respuestas));
+      return NextResponse.json(
+        { ok: false, error: "No se pudo guardar el diagnóstico. Intenta de nuevo en unos segundos." },
+        { status: 503 }
+      );
     }
 
     return NextResponse.json({ ok: true, id: guardado.id });

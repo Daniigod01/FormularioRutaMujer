@@ -70,7 +70,12 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ respuestas, resultado }),
       });
-      if (!res.ok) throw new Error("No se pudo enviar el diagnóstico. Intenta de nuevo.");
+      const data = await res.json().catch(() => null);
+      if (!res.ok || !data?.ok || !data?.id) {
+        throw new Error(
+          "No se pudo guardar el diagnóstico. Tus respuestas siguen aquí: espera unos segundos y vuelve a presionar Enviar."
+        );
+      }
       setPaso("enviado");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (e) {
