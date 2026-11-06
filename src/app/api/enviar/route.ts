@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { guardarDiagnostico } from "@/lib/db";
+import { correoConfigurado, enviarCopiaPorCorreo } from "@/lib/correo";
 import type { Respuestas } from "@/lib/preguntas";
 import type { ResultadoEje } from "@/lib/puntaje";
 
@@ -14,20 +15,37 @@ export async function POST(req: Request) {
     }
 
     const guardado = await guardarDiagnostico(respuestas, resultado);
+    if (!guardado.ok) console.error("guardarDiagnostico FALLÓ:", guardado.error);
 
-    if (!guardado.ok) {
-      // Nunca responder "éxito" si no se guardó: la empresa vería la pantalla
-      // de envío exitoso y el diagnóstico se perdería sin que nadie lo note.
-      // Dejamos las respuestas en el log para poder recuperarlas si hace falta.
-      console.error("guardarDiagnostico FALLÓ:", guardado.error);
-      console.error("Respuestas no guardadas:", JSON.stringify(respuestas));
-      return NextResponse.json(
-        { ok: false, error: "No se pudo guardar el diagnóstico. Intenta de nuevo en unos segundos." },
-        { status: 503 }
-      );
+    // Copia por correo de cada diagnóstico (se guarde o no en la base).
+    let correoEnviado = false;
+    if (correoConfigurado()) {
+      const correo = await enviarCopiaPorCorreo({
+        respuestas,
+        idGuardado: guardado.ok ? guardado.id : null,
+        errorGuardado: guardado.ok ? undefined : guardado.error,
+      });
+      correoEnviado = correo.ok;
+      if (!correo.ok) console.error("enviarCopiaPorCorreo FALLÓ:", correo.error);
     }
 
-    return NextResponse.json({ ok: true, id: guardado.id });
+    if (guardado.ok) {
+      return NextResponse.json({ ok: true, id: guardado.id, correoEnviado });
+    }
+
+    if (correoEnviado) {
+      // La base falló pero las respuestas completas quedaron en el correo:
+      // la información está a salvo, así que no hacemos repetir a la empresa.
+      return NextResponse.json({ ok: true, id: null, correoEnviado, guardadoEnBD: false });
+    }
+
+    // No quedó en ningún lado: nunca responder "éxito".
+    // Dejamos las respuestas en el log para poder recuperarlas si hace falta.
+    console.error("Respuestas no guardadas:", JSON.stringify(respuestas));
+    return NextResponse.json(
+      { ok: false, error: "No se pudo guardar el diagnóstico. Intenta de nuevo en unos segundos." },
+      { status: 503 }
+    );
   } catch (err) {
     const mensaje = err instanceof Error ? err.message : String(err);
     return NextResponse.json({ ok: false, error: mensaje }, { status: 500 });
