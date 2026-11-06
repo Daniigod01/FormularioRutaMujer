@@ -71,7 +71,7 @@ export default function Home() {
         body: JSON.stringify({ respuestas, resultado }),
       });
       const data = await res.json().catch(() => null);
-      if (!res.ok || !data?.ok || !data?.id) {
+      if (!res.ok || !data?.ok) {
         throw new Error(
           "No se pudo guardar el diagnóstico. Tus respuestas siguen aquí: espera unos segundos y vuelve a presionar Enviar."
         );
