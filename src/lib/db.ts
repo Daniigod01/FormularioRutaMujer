@@ -30,13 +30,31 @@ const globalConTipo = globalThis as unknown as { __pgPool?: Pool };
 
 function obtenerPool(): Pool {
   if (!globalConTipo.__pgPool) {
-    globalConTipo.__pgPool = new Pool({
+    const pool = new Pool({
       connectionString: cadenaConexion(),
       ssl: { rejectUnauthorized: false },
       max: 3,
+      // Cerrar conexiones inactivas pronto: Supabase/Vercel pueden cortarlas
+      // por su lado y reutilizar una conexión muerta hace fallar el guardado.
+      idleTimeoutMillis: 10_000,
+      connectionTimeoutMillis: 10_000,
     });
+    // Sin este manejador, un corte en una conexión inactiva tumba la función.
+    pool.on("error", (err) => {
+      console.error("Pool de Postgres: conexión inactiva con error:", err.message);
+    });
+    globalConTipo.__pgPool = pool;
   }
   return globalConTipo.__pgPool;
+}
+
+// Descarta el pool actual (p. ej. tras un error de conexión) para que el
+// siguiente intento abra conexiones nuevas.
+async function reiniciarPool() {
+  const viejo = globalConTipo.__pgPool;
+  globalConTipo.__pgPool = undefined;
+  tablaLista = false;
+  if (viejo) await viejo.end().catch(() => {});
 }
 
 let tablaLista = false;
@@ -66,21 +84,30 @@ export async function guardarDiagnostico(
   if (!bdConfigurada()) {
     return { ok: false, error: "La base de datos no está configurada en el servidor todavía." };
   }
-  try {
-    await asegurarTabla();
-    const pool = obtenerPool();
-    const empresa = String(respuestas["EjeA_nombre_de_la_organizacion"] ?? "");
-    const nit = String(respuestas["EjeA_nit"] ?? "");
-    const resultadoQuery = await pool.query(
-      `INSERT INTO diagnosticos (empresa, nit, respuestas, resultado)
-       VALUES ($1, $2, $3::jsonb, $4::jsonb)
-       RETURNING id`,
-      [empresa, nit, JSON.stringify(respuestas), JSON.stringify(resultado)]
-    );
-    return { ok: true, id: resultadoQuery.rows[0].id as number };
-  } catch (err) {
-    return { ok: false, error: err instanceof Error ? err.message : String(err) };
+  const empresa = String(respuestas["EjeA_nombre_de_la_organizacion"] ?? "");
+  const nit = String(respuestas["EjeA_nit"] ?? "");
+
+  // Hasta 3 intentos: si falla la conexión, reiniciamos el pool y reintentamos.
+  let ultimoError = "";
+  for (let intento = 1; intento <= 3; intento++) {
+    try {
+      await asegurarTabla();
+      const pool = obtenerPool();
+      const resultadoQuery = await pool.query(
+        `INSERT INTO diagnosticos (empresa, nit, respuestas, resultado)
+         VALUES ($1, $2, $3::jsonb, $4::jsonb)
+         RETURNING id`,
+        [empresa, nit, JSON.stringify(respuestas), JSON.stringify(resultado)]
+      );
+      return { ok: true, id: resultadoQuery.rows[0].id as number };
+    } catch (err) {
+      ultimoError = err instanceof Error ? err.message : String(err);
+      console.error(`guardarDiagnostico intento ${intento} falló:`, ultimoError);
+      await reiniciarPool();
+      if (intento < 3) await new Promise((r) => setTimeout(r, 500 * intento));
+    }
   }
+  return { ok: false, error: ultimoError };
 }
 
 export type DiagnosticoResumen = { id: number; empresa: string; nit: string; fecha: string };
